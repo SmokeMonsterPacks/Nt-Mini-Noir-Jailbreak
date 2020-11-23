@@ -98,7 +98,7 @@ Some mappers (mapper 90, multicart mappers, drip mapper) support dip switches.  
 Each time a game is loaded, the dipswitches will be cleared.  
 
 For the Nintendo World Championships 1990 and Nintendo Campus Challenge 1991 competition cartridges, Dips 1-4 set the competition time and Dip 5 removes the time limit.  Here are the settings for Dips 1-4:
-
+```
 Dips
 4321 - |time (mins)
 ------------------
@@ -118,6 +118,7 @@ CCOO - 8.756
 CCOC - 9.070
 CCCO - 9.318
 CCCC - 9.695
+```
 
 O = switch open ("off"), C = switch closed ("on")
 
@@ -147,6 +148,7 @@ This core is taking full advantage of NES 2.0 headers.  This includes mappers, s
 Some of the Sachen multi-carts also have issues inherent to their ROMs : Super Cartridge Ver 1 - 4 in 1 - Honey Peach has a broken triangle channel during title screen music, Super Cartridge Ver 5 - 7 in 1 - Magical Mathematics is missing its title screen audio and Super Cartridge Ver 7 - 4 in 1 - Silver Eagle's main character sprite gets glitchy when shooting.
 
 (complete list of implemented and tested mappers)
+```
 0     - NROM
 1.0   - MMC1 
 1.5   - MMC1 with fixed PRG banking
@@ -427,6 +429,7 @@ Some of the Sachen multi-carts also have issues inherent to their ROMs : Super C
 553   - Sachen Penguin and Seal (original version)
 554   - FDS Castlevania conversion
 555   - NES-EVENT2
+```
 
 CopyNES mini
 ------------
