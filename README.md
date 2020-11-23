@@ -9,9 +9,9 @@ Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 - SPC player added
 - Mandelbrot zoomer added
 
+------------------------------
 
-How to use it
--------------
+## How to install/update?
 
 First off, to use the Jailbreak mode, perform the following steps:
 
@@ -39,8 +39,7 @@ card, perform the following steps:
 - On powerup, the Nt Mini will update and will be ready to go!
 
 
-Cores Menu
-----------
+## How to launch a core?
 
 The cores menu lets you select one of the various cores that are and
 will be available.  To run a specific core (say, NES) simply select
@@ -68,14 +67,15 @@ The key setup for the core menus are:
   exit, it returns to the currently running game.
 
 
-*changelog*
------------
+## changelog
 
 v6.1 (initial release)
 
 
-NES/Famicom Core Release Notes
 ------------------------------
+
+# NES/Famicom Core Release Notes
+
 
 This core is extremely large and encompasses 279 mappers.  All the major mappers and many other mappers are implemented and work.  NES 2.0 headers are 100% supported and many NES 2.0 mappers are included.  Every mapper was completely rewritten using the most current information available.
 
