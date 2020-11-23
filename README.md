@@ -1,6 +1,6 @@
 # Nt-Mini-Noir-Jailbreak
-Custom "Jailbreak" firmware for the Analogue Nt Mini V2 "Noir"
-----------------
+
+Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
 - New NES core 100% supports 2.0 mappers
 - Genesis core added
@@ -8,6 +8,10 @@ Custom "Jailbreak" firmware for the Analogue Nt Mini V2 "Noir"
 - Megaduck core added
 - SPC player added
 - Mandelbrot zoomer added
+
+
+How to use it
+-------------
 
 First off, to use the Jailbreak mode, perform the following steps:
 
