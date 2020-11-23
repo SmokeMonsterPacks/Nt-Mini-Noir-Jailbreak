@@ -172,22 +172,44 @@ and the [NES Header Repair Tool Python
 Script](https://github.com/Kitrinx/NES_Header_Repair) to fix your
 headers.
 
-Vs. Tetris - Has only 24KiB of PRG-ROM but the jailbreak will only load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of 00s inserted between the header and start of the PRG-ROM to get the game to work.  
+*Vs. Tetris* has only 24KiB of PRG-ROM but the jailbreak will only
+load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of
+00s inserted between the header and start of the PRG-ROM to get the
+game to work.
 
-Vs. System games obtain their settings from a bank of eight dip switches, these will be found as Dips 1-8 under Core Options - Dip Switches.  If you are not using a SNES-style controller, you can Add a Coin with the Dip Switch menu.  
+Vs. System games obtain their settings from a bank of eight dip
+switches, these will be found as Dips 1-8 under Core Options - Dip
+Switches.  If you are not using a SNES-style controller, you can Add a
+Coin with the Dip Switch menu.
 
-With Vs. System games, you start games with the Select button on either Controller I or, for a two-player game, Controller II.  
+With Vs. System games, you start games with the Select button on
+either Controller I or, for a two-player game, Controller II.
 
 Zappers are supported for Vs. games that use a light gun.
 
-Vs. System games that use one of the 2C04 PPUs will show very incorrect colors when run on a PPU that uses a regular palette (2C02, 2C03, 2C05, 2C07)  On Nt Mini Noir the S-Video and Composite video output options generate palette colors like an original 2C02 or 2C07 would and cannot change their palettes.  The result is that you will need to use Component, RGB or HDMI video to play these games with the proper colors.  
+Vs. System games that use one of the 2C04 PPUs will show very
+incorrect colors when run on a PPU that uses a regular palette (2C02,
+2C03, 2C05, 2C07) On Nt Mini Noir the S-Video and Composite video
+output options generate palette colors like an original 2C02 or 2C07
+would and cannot change their palettes.  The result is that you will
+need to use Component, RGB or HDMI video to play these games with the
+proper colors.
 
-*problem solving*
------------------
 
-This core is taking full advantage of NES 2.0 headers.  This includes mappers, save RAM size, etc.  It is highly recommended that you upgrade your ROM set.  If some games will not run, it most likely is because the core needs more information contained in the 2.0 header, such as Star Tropics. Star Tropics is actually mapper 4.1 (MMC6).
+## problem solving
 
-Some of the Sachen multi-carts also have issues inherent to their ROMs : Super Cartridge Ver 1 - 4 in 1 - Honey Peach has a broken triangle channel during title screen music, Super Cartridge Ver 5 - 7 in 1 - Magical Mathematics is missing its title screen audio and Super Cartridge Ver 7 - 4 in 1 - Silver Eagle's main character sprite gets glitchy when shooting.
+This core is taking full advantage of NES 2.0 headers.  This includes
+mappers, save RAM size, etc.  It is highly recommended that you
+upgrade your ROM set.  If some games will not run, it most likely is
+because the core needs more information contained in the 2.0 header,
+such as *Star Tropics*. *Star Tropics* is actually mapper 4.1 (MMC6).
+
+Some of the Sachen multi-carts also have issues inherent to their
+ROMs: *Super Cartridge Ver 1 - 4 in 1 - Honey Peach* has a broken
+triangle channel during title screen music, *Super Cartridge Ver 5 - 7
+in 1 - Magical Mathematics* is missing its title screen audio and
+*Super Cartridge Ver 7 - 4 in 1 - Silver Eagle*'s main character
+sprite gets glitchy when shooting.
 
 (complete list of implemented and tested mappers)
 ```
@@ -473,30 +495,36 @@ Some of the Sachen multi-carts also have issues inherent to their ROMs : Super C
 555   - NES-EVENT2
 ```
 
-CopyNES mini
-------------
+## CopyNES mini
 
-This lets you dump cartridges and their save RAM (if equipped) directly to the SD card!  There are many supported mappers.
+
+This lets you dump cartridges and their save RAM (if equipped)
+directly to the SD card!  There are many supported mappers.
 
 To dump a game, follow these steps:
 
 - Insert the game in question into the cartridge slot.
-- Select 'Run Cartridge' to make sure it works and is making good contact.
-- Enter the Tools menu and select "Copynes mini".
-- Select the mapper that your game uses.  Use the NES 2.0 XML Database to find the mapper for your game.
+- Select `Run Cartridge` to make sure it works and is making good
+  contact.
+- Enter the Tools menu and select `Copynes mini`.
+- Select the mapper that your game uses.  Use the NES 2.0 XML Database
+  to find the mapper for your game.
+- Hit `B` to start the dump.  Note that it might take awhile (30
+  seconds) to determine the size of the ROMs on the cartridge.
+- After the game is dumped, you can enter a filename using
+  `up/down/left/right`.  If no name is entered, it will save it with a
+  filename determined by the sumcheck of the ROM.
+- Hitting `B` will save the ROM.
 
-- Hit B to start the dump.  Note that it might take awhile (30 seconds) to determine the size of
-  the ROMs on the cartridge.
-- After the game is dumped, you can enter a filename using up/down/left/right.  If no
-  name is entered, it will save it with a filename determined by the sumcheck of the ROM.
-- Hitting B will save the ROM.  
-
-That's it!  You can test the game by going into the cores menu and selecting "NES", then
-going to the /COPYNES/ directory and running the ROM.
+That's it!  You can test the game by going into the cores menu and
+selecting `NES`, then going to the `/COPYNES/` directory and running
+the ROM.
 
 
-Atari 2600 Core Release Notes
------------------------------
+-------------------------------
+
+# Atari 2600 Core Release Notes
+
 
 The Atari 2600 core currently only supports joystick games.
 
