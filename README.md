@@ -76,37 +76,57 @@ v6.1 (initial release)
 
 # NES/Famicom Core Release Notes
 
+This core is extremely large and encompasses 279 mappers.  All the
+major mappers and many other mappers are implemented and work.  NES
+2.0 headers are 100% supported and many NES 2.0 mappers are included.
+Every mapper was completely rewritten using the most current
+information available.
 
-This core is extremely large and encompasses 279 mappers.  All the major mappers and many other mappers are implemented and work.  NES 2.0 headers are 100% supported and many NES 2.0 mappers are included.  Every mapper was completely rewritten using the most current information available.
 
-*save games*
-------------
+## save games
 
-Save game RAM is fully supported for many mappers, and has three modes:
-
+Save game RAM is fully supported for many mappers, and has three
+modes:
 - always save
 - never save
 - prompt
 
-This allows you to control how save RAM saving works. Save filenames should be usable out to 256 characters or so now, which should encompass just about anything.
+This allows you to control how save RAM saving works. Save filenames
+should be usable out to 256 characters or so now, which should
+encompass just about anything.
 
-EEPROM and Flash saving are not supported.  EEPROM saving is used by some Mapper 16, Mapper 157 and all Mapper 159 games (Bandai releases and Datach Joint ROM System).  Flash saving is used by Mappers 30 and 111 (homebrew releases).
+EEPROM and Flash saving are not supported.  EEPROM saving is used by
+some Mapper 16, Mapper 157 and all Mapper 159 games (Bandai releases
+and Datach Joint ROM System).  Flash saving is used by Mappers 30 and
+111 (homebrew releases).
 
-*Expansion audio*
-----------------
 
-Expansion cartridge audio is supported.  Unlike cart mode, however, the act of loading a ROM will force the proper expansion chip to be selected.  This includes many pirate conversions of FDS games to cartridge (except for Tobadaise Daisuken, which had its FDS audio data removed.)  
+## Expansion audio
 
-*other features*
-----------------
+Expansion cartridge audio is supported.  Unlike cart mode, however,
+the act of loading a ROM will force the proper expansion chip to be
+selected.  This includes many pirate conversions of FDS games to
+cartridge (except for *Tobadaise Daisuken*, which had its FDS audio
+data removed.)
 
-Nt Mini Noir supports NES ROMs up to 16MiB in size with up to 32KiB of CHR-RAM and 64KiB of PRG-RAM.  So you cannot have a 16MiB PRG-ROM with 64KiB of CHR-RAM, for example.  
 
-Some mappers (mapper 90, multicart mappers, drip mapper) support dip switches.  These  can be found under the "Core Options" menu which is accessed by hitting START on the file browser for the NES core.
+## other features
 
-Each time a game is loaded, the dipswitches will be cleared.  
+Nt Mini Noir supports NES ROMs up to 16MiB in size with up to 32KiB of
+CHR-RAM and 64KiB of PRG-RAM.  So you cannot have a 16MiB PRG-ROM with
+64KiB of CHR-RAM, for example.
 
-For the Nintendo World Championships 1990 and Nintendo Campus Challenge 1991 competition cartridges, Dips 1-4 set the competition time and Dip 5 removes the time limit.  Here are the settings for Dips 1-4:
+Some mappers (mapper 90, multicart mappers, drip mapper) support dip
+switches.  These can be found under the `Core Options` menu which is
+accessed by hitting `START` on the file browser for the NES core.
+
+Each time a game is loaded, the dipswitches will be cleared.
+
+For the *Nintendo World Championships 1990* and *Nintendo Campus
+Challenge 1991* competition cartridges, Dips 1-4 set the competition
+time and Dip 5 removes the time limit.  Here are the settings for Dips
+1-4:
+
 ```
 Dips
 4321 - |time (mins)
@@ -131,13 +151,26 @@ CCCC - 9.695
 
 O = switch open ("off"), C = switch closed ("on")
 
-Dip Switches always default to Off, so you should set the Dip Switches and then press Reset.  These games are started by pressing start on the 2nd controller.
+Dip Switches always default to Off, so you should set the Dip Switches
+and then press Reset.  These games are started by pressing `start` on
+the 2nd controller.
 
-Coin insertion is done using the trigger on a 12 button controller, and can also be done on the dipswitch submenu if this mapper supports.  All Vs. mappers and mapper 126 (arcade board) use this.
+Coin insertion is done using the trigger on a 12 button controller,
+and can also be done on the dipswitch submenu if this mapper supports.
+All Vs. mappers and mapper 126 (arcade board) use this.
 
-Nt Mini Noir's Core Jailbreak has full Vs. System support for any known game which does not use Vs. Dual System capabilities.  This means that Vs. Balloon Fight, Vs. Baseball, Vs. Ice Climber Dual, Vs. Mahjong, Vs. Raid on Bungeling Bay, Vs. Tennis and Vs. Wrecking Crew are not playable, but the rest are playable.
+Nt Mini Noir's Core Jailbreak has full Vs. System support for any
+known game which does not use Vs. Dual System capabilities.  This
+means that *Vs. Balloon Fight*, *Vs. Baseball*, *Vs. Ice Climber
+Dual*, *Vs. Mahjong*, *Vs. Raid on Bungeling Bay*, *Vs. Tennis* and
+*Vs. Wrecking Crew* are not playable, but the rest are playable.
 
-Vs. System games require full NES 2.0 headers to work properly.  Use the NES 2.0 XML Database and the NES Header Repair Tool Python Script to fix your headers.
+Vs. System games require full NES 2.0 headers to work properly.  Use
+the [NES 2.0 XML
+Database](https://forums.nesdev.com/viewtopic.php?f=3&t=19940&p=248796)
+and the [NES Header Repair Tool Python
+Script](https://github.com/Kitrinx/NES_Header_Repair) to fix your
+headers.
 
 Vs. Tetris - Has only 24KiB of PRG-ROM but the jailbreak will only load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of 00s inserted between the header and start of the PRG-ROM to get the game to work.  
 
