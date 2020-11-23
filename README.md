@@ -42,25 +42,30 @@ card, perform the following steps:
 Cores Menu
 ----------
 
-The cores menu lets you select one of the various cores that are and will be available.  
-To run a specific core (say, NES) simply select it.  If the core needs to be loaded, a box will pop up asking you if you wish to load it.  The loading takes approximately 4 seconds.
+The cores menu lets you select one of the various cores that are and
+will be available.  To run a specific core (say, NES) simply select
+it.  If the core needs to be loaded, a box will pop up asking you if
+you wish to load it.  The loading takes approximately 4 seconds.
 
-During the core loading, the front LED will flicker rapidly to indicate it is loading.  While this happens, the monitor will show no signal, since the FPGA is being reconfigured at this time.
-After the loading, the monitor will come back and you will be sitting in the file browser for this particular core.
+During the core loading, the front LED will flicker rapidly to
+indicate it is loading.  While this happens, the monitor will show no
+signal, since the FPGA is being reconfigured at this time.  After the
+loading, the monitor will come back and you will be sitting in the
+file browser for this particular core.
 
 The key setup for the core menus are:
 
-- UP/DOWN: Select a file
-
-- LEFT/RIGHT: Page through the files quickly 16 at a time
-
-- B: Pressing once will take you to the top of the file list.  pressing again takes you to the bottom.
-
-- A: Run the game.
-
-- START: enter the settings menu. This is slightly different from the main menu.  There may be a "Core Options" settings menu.  Everything core specific will be found here.
-
-- SELECT: exit the menu. You will be asked to confirm.  If you confirm, it returns to the core select   menu.  If you do not wish to exit, it returns to the currently running game.
+- `UP/DOWN`: select a file
+- `LEFT/RIGHT`: page through the files quickly 16 at a time
+- `B`: pressing once will take you to the top of the file list.
+  pressing again takes you to the bottom.
+- `A`: run the game.
+- `START`: enter the settings menu. This is slightly different from
+  the main menu.  There may be a `Core Options` settings menu.
+  Everything core specific will be found here.
+- `SELECT`: exit the menu. You will be asked to confirm.  If you
+  confirm, it returns to the core select menu.  If you do not wish to
+  exit, it returns to the currently running game.
 
 
 *changelog*
