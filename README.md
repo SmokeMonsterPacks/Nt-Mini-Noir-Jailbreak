@@ -551,7 +551,7 @@ You can enable/disable the Atarivox and the controller swap.  A toggle for the d
 Supercharger games:
 -------------------
 
-If you wish to play Supercharger games, you must rename the 2K Supercharger BIOS ROM to `scbios.bin` and place it in the `/BIOS/` directory.
+If you wish to play Supercharger games, you must rename the 2K Supercharger BIOS ROM to `scbios.bin` (CRC32: `C3A3F073`) and place it in the `/BIOS/` directory.
 
 When you wish to load a Supercharger game, press both `A` and `X` to 'press play on tape'.
 If you have a multiload game, you can press these again to do the next load when the game calls for it.
@@ -708,7 +708,7 @@ Atari 7800 ROMs use headers.  There are a few ROMs with bad headers, here is how
 - There's a broken version of Summer Games and Winter Games.  Both need address `0036h` changed from `02h` to `06h`.
 - There is a broken version of Sentinel as well.  Byte `0036h` needs to be `02h` instead of `03h`.
 
-This core needs a BIOS to run which you can select with Core Options.  The Core will load the file `7800bios.bin` found in the `/BIOS/` directory by default.
+This core needs a BIOS to run which you can select with Core Options.  The Core will load the file `7800bios.bin` (expected CRC32: `5D13730C`) found in the `/BIOS/` directory by default.
 
 
 Sega Genesis Jailbreak Notes
@@ -809,7 +809,7 @@ You may need to pivot between the US and Japanese BIOSes for certain games to wo
 Game Gear Core Release Notes
 ----------------------------
 
-Early models of Game Gear did not include a BIOS, but later ones did.  If you wish to see that blue startup screen, you can by selecting the BIOS file under "core options".  The core will load a file with the name `ggbios.bin` by default if found in the `/BIOS/` directory.
+Early models of Game Gear did not include a BIOS, but later ones did.  If you wish to see that blue startup screen, you can by selecting the BIOS file under "core options".  The core will load a file with the name `ggbios.bin` (expected CRC32: `0EBEA9D4`) by default if found in the `/BIOS/` directory.
 
 Because there are three mappers, selecting one of the different mappers works by changing the file extention of the ROM file.  
 
@@ -873,6 +873,11 @@ Colecovision Core Release Notes
 The Coleco core will run games designed for the unenhanced ColecoVision as well as Super Game Module games.
 
 Loading a BIOS is required for this Core to load ROMs.  Load a BIOS under the core options menu.  The Core will automatically load a file named `colbios.bin` if found in the `/BIOS/` directory, but you can use the Select New BIOS File option to select a BIOS file with any name.
+| Coleco BIOS CRC32 | Description |
+| ----------------- | ----------- |
+| `3AA93EF3`        | Official    |
+| `39BB16FC`        | Unofficial, stylized font, can skip waiting |
+| `4999ABC6`        | Bit Corp clone |
 
 *Button mapping*
 ----------------
@@ -905,13 +910,13 @@ Two reproduction games, The Black Onyx and Boxxle use EEPROM for saving, 256 byt
 Gameboy Core Release Notes
 --------------------------
 
-The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy's bootstrap (BIOS) for it to work.  `dmgbios.bin` is the default file to be loaded if found in the `/BIOS/` directory.  The Super Gameboy bootstrap also seems to work and skips the scrolling intro.
+The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy's bootstrap (BIOS) for it to work.  `dmgbios.bin` (expected CRC32: `59C8598E`) is the default file to be loaded if found in the `/BIOS/` directory.  The Super Gameboy bootstrap `dmgbios2.bin` (example CRC32: `EC8A83B9`) also seems to work and skips the scrolling intro.
 
 
 Gameboy Color Core Release Notes
 ---------------------------------
 
-The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy Color's bootstrap (BIOS) for it to work.  `gbcbios.bin` is the default file to be loaded if found in the `/BIOS/` directory.
+The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy Color's bootstrap (BIOS) for it to work.  `gbcbios.bin` (expected CRC32: `41884E46`) is the default file to be loaded if found in the `/BIOS/` directory.
 
 
 Intellivision Core Release Notes
@@ -963,8 +968,8 @@ The Adventurevision core runs all games.  The Code Red demo does not run as well
 There are two BIOS files needed for this core:
 | File          | Description |
 | ------------- | ----------- |
-| `avbios.bin`  | This is the 1K ROM found inside the 8048 on the system. |
-| `avsound.bin` | This is the 512 byte ROM on the sound CPU. |
+| `avbios.bin`  | This is the 1K ROM found inside the 8048 on the system. CRC32: `279E33D1` |
+| `avsound.bin` | This is the 512 byte ROM on the sound CPU. CRC32: `81E95975` |
 
 Both of these need to be put in the `/BIOS/` directory and named as identified above.
 
@@ -1013,7 +1018,7 @@ Y = fire button
 Channel F Core Release Notes
 ----------------------------
 
-The Channel F BIOS is required to be present in the /BIOS/ directory and it must be named cfbios.bin.
+The Channel F BIOS is required to be present in the `/BIOS/` directory and it must be named `cfbios.bin` (expected CRC32: `2882C02D`).
 
 *Button mapping*
 ----------------
@@ -1080,7 +1085,7 @@ You must press reset after loading a game on this system to play it.
 The Creativision plays games and supports the keyboard but tape saving and loading are not working.
 
 The Creativision BIOS must be present in the `/BIOS/` directory and named
-`crbios.bin`.
+`crbios.bin`, expected CRC32: `05602697`
 
 *Button mapping*
 ----------------
@@ -1095,7 +1100,7 @@ On startup, most games will run, show a demo mode and even appear to respond to 
 Gamate Core Release Notes
 -------------------------
 
-This core needs a BIOS, and there's two known BIOSes-  a Bit Corp version and a UMC version. Either can be used, but it must be named `gmbios.bin` and placed in the `/BIOS/` directory on your SD card.
+This core needs a BIOS, and there's two known BIOSes: a Bit Corp version (CRC32: `07090415`) and a UMC version (CRC32: `03A5F3A7`). Either can be used, but it must be named `gmbios.bin` and placed in the `/BIOS/` directory on your SD card.
 
 There are three mappers on the system, and two of these can be distinguished by file size, however the multicart(s) need the `.GML` extension.  So rename the file from i.e. `4-in-1.bin` to `4-in-1.gml` to run it.
 
@@ -1103,7 +1108,7 @@ There are three mappers on the system, and two of these can be distinguished by 
 Game King Core Release Notes
 -------------------------
 
-This core needs a BIOS.  It should be named `gkbios.bin` (sometimes it can be found named `gm218.bin`) and place it in the `/BIOS/` directory on your SD card.
+This core needs a BIOS.  It should be named `gkbios.bin` (sometimes it can be found named `gm218.bin`) and place it in the `/BIOS/` directory on your SD card. Expected CRC32: `5A1ADE3D`.
 
 There's three built in games to the system, so if you wish to play these, simply run the included file, `play bios games.bin`.  This is an empty file consisting of nothing but bytes of `0xff`.  This simulates having no cartridge in the system.
 
@@ -1120,15 +1125,15 @@ Some games (such as Frogger) play poorly with The Voice being enabled all the ti
 
 This core needs a BIOS.  It should be named:
 ```
-o2bios.bin    - Main 8048 BIOS (1K byte)
+o2bios.bin    - Main 8048 BIOS (1K byte)  CRC32: 8016A315
 ```
 This BIOS file can be selected with Core Options.
 
 If you wish to use the voice, you need three files:
 ```
-019.bin       - Speech ROM in the SP0256-019 speech chip (2K bytes)
-sp128_03.bin  - Speech ROM resident in the speech module (16K bytes)
-sp128_04.bin  - Speech ROM in Sid the Spellbinder (16K bytes)
+019.bin       - Speech ROM in the SP0256-019 speech chip (2K bytes)  CRC32: 19355075
+sp128_03.bin  - Speech ROM resident in the speech module (16K bytes) CRC32: 66041B03
+sp128_04.bin  - Speech ROM in Sid the Spellbinder (16K bytes)        CRC32: 6780C7D3
 ```
 Place them in the `/BIOS/` directory and name them as indicated above.
 
@@ -1170,7 +1175,7 @@ These problems are related to how the system renders video,  the CPU itself driv
 
 Many games on this system them start with a black screen until you press a button.  This is normal, refer to the instruction manual to determine how to start the game.
 
-This system requires a BIOS, and it must be named `rca2bios.bin` and placed in the `/BIOS/` directory.
+This system requires a BIOS, and it must be named `rca2bios.bin` (CRC32: `A494B339`) and placed in the `/BIOS/` directory.
 
 Controller mapping:
 -------------------
@@ -1217,8 +1222,8 @@ The Videobrain supports keyboards via a PS2 keyboard and the Odyssey^2 adapter.
 
 This core needs a pair BIOS ROMs. They must be named:
 ```
-uvres1.bin    - The first BIOS file (2K bytes)
-uvres2.bin    - The second BIOS file (2K bytes)
+uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2`
+uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE`
 ```
 Place them in the `/BIOS/` directory.
 
