@@ -2,32 +2,32 @@
 Custom "Jailbreak" firmware for the Analogue Nt Mini V2 "Noir"
 ----------------
 
--New NES core 100% supports 2.0 mappers
--Genesis core added
--Intellivision core added
--Megaduck core added
--SPC player added
--Mandelbrot zoomer added
+- New NES core 100% supports 2.0 mappers
+- Genesis core added
+- Intellivision core added
+- Megaduck core added
+- SPC player added
+- Mandelbrot zoomer added
 
 First off, to use the JB mode, perform the following steps:
 
-* Format an SD card with FAT32.
-* Unzip this pack directly to the SD card, keeping all directories/folders intact.
-* Add your ROMs to the proper directory.  i.e. NES ROMs go in /NES/
-* Insert the SD card into the nt mini and power it up.
-* The system will perform an update which takes approximately 3 minutes.  The front LED will flash.
-* After the update, the system will reboot automatically.
-* The main menu should now give a new option, "Cores", to signify this is the JB mode!
+- Format an SD card with FAT32.
+- Unzip this pack directly to the SD card, keeping all directories/folders intact.
+- Add your ROMs to the proper directory.  i.e. NES ROMs go in /NES/
+- Insert the SD card into the nt mini and power it up.
+- The system will perform an update which takes approximately 3 minutes.  The front LED will flash.
+- After the update, the system will reboot automatically.
+- The main menu should now give a new option, "Cores", to signify this is the JB mode!
 
 If you wish to install JUST the updates and not reformat your card, perform the following steps:
 
 (general)
 
-* Replace the /SYSTEM/ directory on your SD card
-* Add any subdirectories that do not exist on your current card
-* Add any new BIOS files listed in the text file in the /BIOS directory.
-* Load your games into the new directories.
-* On powerup, the Nt Mini will update and will be ready to go!
+- Replace the /SYSTEM/ directory on your SD card
+- Add any subdirectories that do not exist on your current card
+- Add any new BIOS files listed in the text file in the /BIOS directory.
+- Load your games into the new directories.
+- On powerup, the Nt Mini will update and will be ready to go!
 
 
 Cores Menu
@@ -41,17 +41,17 @@ After the loading, the monitor will come back and you will be sitting in the fil
 
 The key setup for the core menus are:
 
-* UP/DOWN: Select a file
+- UP/DOWN: Select a file
 
-* LEFT/RIGHT: Page through the files quickly 16 at a time
+- LEFT/RIGHT: Page through the files quickly 16 at a time
 
-* B: Pressing once will take you to the top of the file list.  pressing again takes you to the bottom.
+- B: Pressing once will take you to the top of the file list.  pressing again takes you to the bottom.
 
-* A: Run the game.
+- A: Run the game.
 
-* START: enter the settings menu. This is slightly different from the main menu.  There may be a "Core Options" settings menu.  Everything core specific will be found here.
+- START: enter the settings menu. This is slightly different from the main menu.  There may be a "Core Options" settings menu.  Everything core specific will be found here.
 
-* SELECT: exit the menu. You will be asked to confirm.  If you confirm, it returns to the core select   menu.  If you do not wish to exit, it returns to the currently running game.
+- SELECT: exit the menu. You will be asked to confirm.  If you confirm, it returns to the core select   menu.  If you do not wish to exit, it returns to the currently running game.
 
 
 *changelog*
@@ -70,9 +70,9 @@ This core is extremely large and encompasses 279 mappers.  All the major mappers
 
 Save game RAM is fully supported for many mappers, and has three modes:
 
-* always save
-* never save
-* prompt
+- always save
+- never save
+- prompt
 
 This allows you to control how save RAM saving works. Save filenames should be usable out to 256 characters or so now, which should encompass just about anything.
 
@@ -430,16 +430,16 @@ This lets you dump cartridges and their save RAM (if equipped) directly to the S
 
 To dump a game, follow these steps:
 
-* Insert the game in question into the cartridge slot.
-* Select 'Run Cartridge' to make sure it works and is making good contact.
-* Enter the Tools menu and select "Copynes mini".
-* Select the mapper that your game uses.  Use the NES 2.0 XML Database to find the mapper for your game.
+- Insert the game in question into the cartridge slot.
+- Select 'Run Cartridge' to make sure it works and is making good contact.
+- Enter the Tools menu and select "Copynes mini".
+- Select the mapper that your game uses.  Use the NES 2.0 XML Database to find the mapper for your game.
 
-* Hit B to start the dump.  Note that it might take awhile (30 seconds) to determine the size of
+- Hit B to start the dump.  Note that it might take awhile (30 seconds) to determine the size of
   the ROMs on the cartridge.
-* After the game is dumped, you can enter a filename using up/down/left/right.  If no
+- After the game is dumped, you can enter a filename using up/down/left/right.  If no
   name is entered, it will save it with a filename determined by the sumcheck of the ROM.
-* Hitting B will save the ROM.  
+- Hitting B will save the ROM.  
 
 That's it!  You can test the game by going into the cores menu and selecting "NES", then
 going to the /COPYNES/ directory and running the ROM.
@@ -629,9 +629,9 @@ Mappers and ROMs:
 
 Atari 7800 ROMs use headers.  There are a few ROMs with bad headers, here is how to fix some of them :
 
-* Commando has no Pokey sound - the header needs to have it enabled. (0036h needs to be 03h instead of 02h)
-* There's a broken version of Summer Games and Winter Games.  Both need address 0036h changed from 02h to 06h.
-* There is a broken version of Sentinel as well.  Byte 0036h needs to be 02h instead of 03h.
+- Commando has no Pokey sound - the header needs to have it enabled. (0036h needs to be 03h instead of 02h)
+- There's a broken version of Summer Games and Winter Games.  Both need address 0036h changed from 02h to 06h.
+- There is a broken version of Sentinel as well.  Byte 0036h needs to be 02h instead of 03h.
 
 This core needs a BIOS to run which you can select with Core Options.  The Core will load the file 7800bios.bin found in the /BIOS/ Directory by default.
 
@@ -725,19 +725,19 @@ Terebi Oekaki: needs a drawing tablet and will not start without it.
 SMS:
 You may need to pivot between the US and Japanese BIOSes for certain games to work.  The US BIOS performs a region check and will not play games (such as Sega's Japanese games) that do not pass the check.
 
-* PAL games might have problems such as sprite flicker- this is normal and happens on an NTSC system too.
+- PAL games might have problems such as sprite flicker- this is normal and happens on an NTSC system too.
 
-* Some games (Walter Payton Football, Spy vs. Spy) need the US BIOS to work.  The former runs but has initial  title screen corruption and the latter doesn't start at all.
+- Some games (Walter Payton Football, Spy vs. Spy) need the US BIOS to work.  The former runs but has initial  title screen corruption and the latter doesn't start at all.
 
-* MSX Ports larger than 48K use unusual mappers and are not supported.
+- MSX Ports larger than 48K use unusual mappers and are not supported.
 
-* Games that require a paddle controller, light gun or the 3-D glasses will not work.  
+- Games that require a paddle controller, light gun or the 3-D glasses will not work.  
    
-* Wanted - you must turn off FM for this game to work but it still requires a light fun
+- Wanted - you must turn off FM for this game to work but it still requires a light fun
 
-* Super Tank - select one of the "export" options in System/Hardware.
+- Super Tank - select one of the "export" options in System/Hardware.
 
-* Back to the Future 3: locks up at black screen because it detects PAL/NTSC and will refuse to work if it detects 
+- Back to the Future 3: locks up at black screen because it detects PAL/NTSC and will refuse to work if it detects 
 
 
 Game Gear Core Release Notes
@@ -1115,9 +1115,9 @@ The Studio 2 core runs games and homebrew.
 
 The video display can be problematic on this Core, showing the following issues:
 
-* The selected entry on the menus flashes really fast.  
-* The screen might scroll on reset
-* You cannot see the menu on composite/rgb if the CPU is reset.
+- The selected entry on the menus flashes really fast.  
+- The screen might scroll on reset
+- You cannot see the menu on composite/rgb if the CPU is reset.
 
 These problems are related to how the system renders video,  the CPU itself drives the video display, and when the CPU does not run, it does not generate video timing.  
 
