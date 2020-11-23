@@ -9,23 +9,28 @@ Custom "Jailbreak" firmware for the Analogue Nt Mini V2 "Noir"
 - SPC player added
 - Mandelbrot zoomer added
 
-First off, to use the JB mode, perform the following steps:
+First off, to use the Jailbreak mode, perform the following steps:
 
 - Format an SD card with FAT32.
-- Unzip this pack directly to the SD card, keeping all directories/folders intact.
-- Add your ROMs to the proper directory.  i.e. NES ROMs go in /NES/
-- Insert the SD card into the nt mini and power it up.
-- The system will perform an update which takes approximately 3 minutes.  The front LED will flash.
+- Unzip this pack directly to the SD card, keeping all
+  directories/folders intact.
+- Add your ROMs to the proper directory.  i.e. NES ROMs go in `/NES/`
+- Insert the SD card into the Nt Mini and power it up.
+- The system will perform an update which takes approximately 3
+  minutes.  The front LED will flash.
 - After the update, the system will reboot automatically.
-- The main menu should now give a new option, "Cores", to signify this is the JB mode!
+- The main menu should now give a new option, `Cores`, to signify this
+  is the Jailbreak mode!
 
-If you wish to install JUST the updates and not reformat your card, perform the following steps:
+If you wish to install **just** the updates and not reformat your
+card, perform the following steps:
 
 (general)
 
-- Replace the /SYSTEM/ directory on your SD card
-- Add any subdirectories that do not exist on your current card
-- Add any new BIOS files listed in the text file in the /BIOS directory.
+- Replace the `/SYSTEM/` directory on your SD card.
+- Add any subdirectories that do not exist on your current card.
+- Add any new BIOS files listed in the text file in the `/BIOS/`
+  directory.
 - Load your games into the new directories.
 - On powerup, the Nt Mini will update and will be ready to go!
 
