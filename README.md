@@ -54,8 +54,8 @@ file browser for this particular core.
 
 The key setup for the core menus are:
 
-- `UP/DOWN`: select a file
-- `LEFT/RIGHT`: page through the files quickly 16 at a time
+- `UP`/`DOWN`: select a file
+- `LEFT`/`RIGHT`: page through the files quickly 16 at a time
 - `B`: pressing once will take you to the top of the file list.
   pressing again takes you to the bottom.
 - `A`: run the game.
@@ -90,12 +90,18 @@ Save game RAM is fully supported for many mappers, and has three modes:
 - never save
 - prompt
 
-This allows you to control how save RAM saving works. Save filenames should be usable out to 256 characters or so now, which should encompass just about anything.
+This allows you to control how save RAM saving works. Save filenames
+should be usable out to 256 characters or so now, which should
+encompass just about anything.
 
 EEPROM and Flash saving are not supported.  EEPROM saving is used by
-some [Mapper 16](https://wiki.nesdev.com/w/index.php/INES_Mapper_016), [Mapper 157](https://wiki.nesdev.com/w/index.php/INES_Mapper_157) and all [Mapper 159](https://wiki.nesdev.com/w/index.php/INES_Mapper_159) games (Bandai releases
-and Datach Joint ROM System).  Flash saving is used by [Mappers 30](https://wiki.nesdev.com/w/index.php/UNROM_512) and
-[111](https://wiki.nesdev.com/w/index.php/GTROM) (homebrew releases).
+some [Mapper 16](https://wiki.nesdev.com/w/index.php/INES_Mapper_016),
+[Mapper 157](https://wiki.nesdev.com/w/index.php/INES_Mapper_157) and
+all [Mapper 159](https://wiki.nesdev.com/w/index.php/INES_Mapper_159)
+games (Bandai releases and Datach Joint ROM System).  Flash saving is
+used by [Mappers 30](https://wiki.nesdev.com/w/index.php/UNROM_512)
+and [111](https://wiki.nesdev.com/w/index.php/GTROM) (homebrew
+releases).
 
 
 ## Expansion audio
@@ -113,9 +119,11 @@ Nt Mini Noir supports NES ROMs up to 16MiB in size with up to 32KiB of
 CHR-RAM and 64KiB of PRG-RAM.  So you cannot have a 16MiB PRG-ROM with
 64KiB of CHR-RAM, for example.
 
-Some mappers ([mapper 90](https://wiki.nesdev.com/w/index.php/J.Y._Company_ASIC), multicart mappers, drip mapper) support dip
-switches.  These can be found under the `Core Options` menu which is
-accessed by hitting `START` on the file browser for the NES core.
+Some mappers ([mapper
+90](https://wiki.nesdev.com/w/index.php/J.Y._Company_ASIC), multicart
+mappers, drip mapper) support dip switches.  These can be found under
+the `Core Options` menu which is accessed by hitting `START` on the
+file browser for the NES core.
 
 Each time a game is loaded, the dipswitches will be cleared.
 
@@ -128,24 +136,24 @@ time and Dip 5 removes the time limit.  Here are the settings for Dips
 O = switch open ("off")
 C = switch closed ("on")
 ```
-| Dips 4321 | time (mins) |
-| --------- | ----------- |
-| `OOOO`    | 5.001 |
-| `OOOC`    | 5.316 |
-| `OOCO`    | 5.629 |
-| `OOCC`    | 5.942 |
+| Dips 4321 | time (mins)                       |
+| --------- | -----------                       |
+| `OOOO`    | 5.001                             |
+| `OOOC`    | 5.316                             |
+| `OOCO`    | 5.629                             |
+| `OOCC`    | 5.942                             |
 | `OCOO`    | 6.254 (Official Tournament Times) |
-| `OCOC`    | 6.567 |
-| `OCCO`    | 6.880 |
-| `OCCC`    | 7.193 |
-| `COOO`    | 7.505 |
-| `COOC`    | 7.818 |
-| `COCO`    | 8.131 |
-| `COCC`    | 8.444 |
-| `CCOO`    | 8.756 |
-| `CCOC`    | 9.070 |
-| `CCCO`    | 9.318 |
-| `CCCC`    | 9.695 |
+| `OCOC`    | 6.567                             |
+| `OCCO`    | 6.880                             |
+| `OCCC`    | 7.193                             |
+| `COOO`    | 7.505                             |
+| `COOC`    | 7.818                             |
+| `COCO`    | 8.131                             |
+| `COCC`    | 8.444                             |
+| `CCOO`    | 8.756                             |
+| `CCOC`    | 9.070                             |
+| `CCCO`    | 9.318                             |
+| `CCCC`    | 9.695                             |
 
 Dip Switches always default to Off, so you should set the Dip Switches
 and then press Reset.  These games are started by pressing `start` on
@@ -508,8 +516,8 @@ To dump a game, follow these steps:
 - Hit `B` to start the dump.  Note that it might take awhile (30
   seconds) to determine the size of the ROMs on the cartridge.
 - After the game is dumped, you can enter a filename using
-  `up/down/left/right`.  If no name is entered, it will save it with a
-  filename determined by the sumcheck of the ROM.
+  `up`/`down`/`left`/`right`.  If no name is entered, it will save it
+  with a filename determined by the sumcheck of the ROM.
 - Hitting `B` will save the ROM.
 
 That's it!  You can test the game by going into the cores menu and
@@ -524,115 +532,138 @@ the ROM.
 
 The Atari 2600 core currently only supports joystick games.
 
-Atari 2600 games determine the number of scanlines they will use.  In HDMI mode, the display window for Atari 2600 games is 160 pixels by 239 pixels, which is adequate for most games.  A few games (Pick and Pile, and Acid Drop) produce far too many scanlines, the viewport can be centered so that most of the screen is visible.
+Atari 2600 games determine the number of scanlines they will use.  In
+HDMI mode, the display window for Atari 2600 games is 160 pixels by
+239 pixels, which is adequate for most games.  A few games (*Pick and
+Pile*, and *Acid Drop*) produce far too many scanlines, the viewport
+can be centered so that most of the screen is visible.
 
-Controller mapping:
--------------------
 
-It is suggested to use a SNES controller or an NTT Data Pad.  If not, the
-difficulty switches and TV type and Supercharger load functionality is present in the core options menu.
+## Controller mapping
 
-You can swap joystick ports virtually, because some games seem to use one or the other.  This is also accessible in the core options menu.
+It is suggested to use a SNES controller or an NTT Data Pad.  If not,
+the difficulty switches and TV type and Supercharger load
+functionality is present in the core options menu.
 
-`Y` is the fire button (`B` on an NES controller).  
+You can swap joystick ports virtually, because some games seem to use
+one or the other.  This is also accessible in the core options menu.
 
-Left and right triggers toggle the difficulty switch for this player, while on
-player 1, `X` and `A` toggle the B&W/colour switch.  `X` is colour, `A` is B&W.
+`Y` is the fire button (`B` on an NES controller).
+
+Left and right triggers toggle the difficulty switch for this player,
+while on player 1, `X` and `A` toggle the B&W/colour switch.  `X` is
+colour, `A` is B&W.
 
 In most games, left trigger is hard, and right trigger is easy.
 
 `Select` and `start` are `select` and `reset`, respectively.
 
-Core Options menu:
-------------------
 
-You can enable/disable the Atarivox and the controller swap.  A toggle for the difficulty and TV type switches is present.  An option to load the next portion of a Supercharger ROM is also here.
+## Core Options menu
 
-Supercharger games:
--------------------
+You can enable/disable the Atarivox and the controller swap.  A toggle
+for the difficulty and TV type switches is present.  An option to load
+the next portion of a Supercharger ROM is also here.
 
-If you wish to play Supercharger games, you must rename the 2K Supercharger BIOS ROM to `scbios.bin` (CRC32: `C3A3F073`) and place it in the `/BIOS/` directory.
 
-When you wish to load a Supercharger game, press both `A` and `X` to 'press play on tape'.
-If you have a multiload game, you can press these again to do the next load when the game calls for it.
+## Supercharger games
 
-Note: it takes about 1-2 seconds for the load to start when the `A`/`X` combo is pressed or the menu entry selected and pressed. 
+If you wish to play Supercharger games, you must rename the 2K
+Supercharger BIOS ROM to `scbios.bin` (CRC32: `C3A3F073`) and place it
+in the `/BIOS/` directory.
 
-Atarivox:
----------
+When you wish to load a Supercharger game, press both `A` and `X` to
+'press play on tape'.  If you have a multiload game, you can press
+these again to do the next load when the game calls for it.
 
-Atarivox is supported, via a PIC18F1320.  The PIC ROM code is stored as avoxrom.bin and the PIC EEPROM data is stored as `avoxee.bin`. `avoxrom.bin` is 8K bytes, and avoxee.bin is 256 bytes.
-Place these two files in the `/BIOS/` directory.  
+Note: it takes about 1-2 seconds for the load to start when the
+`A`/`X` combo is pressed or the menu entry selected and pressed.
 
-Note that the EEPROM is the data on the PIC micro itself, and not the high score/setting EEPROM. The EEPROM that stores high scores, etc. is not implemented at this time.
 
-Supercharger Demo Unit:
------------------------
+## Atarivox
 
-The demo unit is fully supported.  To run it, you need to make a single 66K
-file consisting of the 64K worth of data EPROMs, followed by the 2K EPROM.
+Atarivox is supported, via a PIC18F1320.  The PIC ROM code is stored
+as `avoxrom.bin` and the PIC EEPROM data is stored as
+`avoxee.bin`. `avoxrom.bin` is 8K bytes, and avoxee.bin is 256 bytes.
+Place these two files in the `/BIOS/` directory.
 
-Palettes:
----------
+Note that the EEPROM is the data on the PIC micro itself, and not the
+high score/setting EEPROM. The EEPROM that stores high scores, etc. is
+not implemented at this time.
 
-All three palettes are supported: NTSC, PAL, and SECAM.   There is also an 
-"automatic" mode that will select between NTSC and PAL in most cases.  It does
-this by checking the scanline count.  If it's greater than 284, then the PAL
-palette is selected, otherwise NTSC is.
 
-You can force a palette to either of the three, or automatic in the core settings
-menu.
+## Supercharger Demo Unit
 
-Mappers and ROMs:
------------------
+The demo unit is fully supported.  To run it, you need to make a
+single 66K file consisting of the 64K worth of data EPROMs, followed
+by the 2K EPROM.
 
-The 2600 has no standardized ROM header format, making it difficult to determine the identity of any extra hardware on the cartridge.
 
-The 2600 core determines the ROM's mapper based on file size, and then file
-extension.
+## Palettes
+
+All three palettes are supported: NTSC, PAL, and SECAM.  There is also
+an "automatic" mode that will select between NTSC and PAL in most
+cases.  It does this by checking the scanline count.  If it's greater
+than 284, then the PAL palette is selected, otherwise NTSC is.
+
+You can force a palette to either of the three, or automatic in the
+core settings menu.
+
+
+## Mappers and ROMs
+
+The 2600 has no standardized ROM header format, making it difficult to
+determine the identity of any extra hardware on the cartridge.
+
+The 2600 core determines the ROM's mapper based on file size, and then
+file extension.
 
 The mapper is determined like so:
 
-| Filesize    | Mapper |
-|-------------|--------|
-| 2048 bytes  | standard 2K game, no bankswitching |
-| 4096 bytes  | standard 4K game, no bankswitching |
-| 8192 bytes  | standard 8K game, uses F8 (FFF8/FFF9) bankswitching |
+| Filesize    | Mapper                                               |
+|-------------|------------------------------------------------------|
+| 2048 bytes  | standard 2K game, no bankswitching                   |
+| 4096 bytes  | standard 4K game, no bankswitching                   |
+| 8192 bytes  | standard 8K game, uses F8 (FFF8/FFF9) bankswitching  |
 | 16384 bytes | standard 16K game, uses F6 (FFF6-FFF9) bankswitching |
 | 32768 bytes | standard 32K game, uses F4 (FFF4-FFFA) bankswitching |
-| 65536 bytes | Dynacom Megaboy |
-| 12288 bytes | RAM+ (FA) |
-| 10240 bytes | Pitfall 2 (DPC) |
-| 10495 bytes | Pitfall 2 (DPC) |
-| 24576 bytes | 24K (FA2) |
-| 8448 bytes  | Supercharger single load |
-| 16896 bytes | Supercharger dual load |
-| 25344 bytes | Supercharger triple load |
-| 33792 bytes | Supercharger quad load |
-| 67584 bytes | Supercharger demo unit |
+| 65536 bytes | Dynacom Megaboy                                      |
+| 12288 bytes | RAM+ (FA)                                            |
+| 10240 bytes | Pitfall 2 (DPC)                                      |
+| 10495 bytes | Pitfall 2 (DPC)                                      |
+| 24576 bytes | 24K (FA2)                                            |
+| 8448 bytes  | Supercharger single load                             |
+| 16896 bytes | Supercharger dual load                               |
+| 25344 bytes | Supercharger triple load                             |
+| 33792 bytes | Supercharger quad load                               |
+| 67584 bytes | Supercharger demo unit                               |
 
 For 8K, 16K, and 32K games, superchip RAM is detected by looking at
 the first 256 bytes of the file.  If it is all `0x00` or `0xff` then
 the game is assumed to have RAM here.
 
-At this point, the extension is checked.  If it matches one of the below, then this
-mapper is selected:
-| File extension | Mapper |
-| ---------------| ------ |
-| `.ACT`         | Activision 8K FE banking |
-| `.PB`          | Parker Bros. E0 mapping |
-| `.TV`          | Tigervision 3F mapping |
-| `.TVR`         | Tigervision 3E (with RAM) mapping |
-| `.MN`          | M-network E7 mapping |
-| `.CV`          | Commavid extra RAM |
-| `.EB`          | Econobanking |
-| `.EF`          | EF Bankswitching |
-| `.EFR`         | EF with RAM |
-| `.UA`          | UA bankswitching |
-| `.X07`         | X07 bankswitching |
-| `.SB`          | Superbanking |
+At this point, the extension is checked.  If it matches one of the
+below, then this mapper is selected:
 
-Note: A popular ROM pack may show certain characters in file names as flashing characters (i.e. pele's soccer).  These show up as flashing characters in the menu. This is normal because they are outside of the ASCII range later.
+| File extension  | Mapper                            |
+| --------------- | ------                            |
+| `.ACT`          | Activision 8K FE banking          |
+| `.PB`           | Parker Bros. E0 mapping           |
+| `.TV`           | Tigervision 3F mapping            |
+| `.TVR`          | Tigervision 3E (with RAM) mapping |
+| `.MN`           | M-network E7 mapping              |
+| `.CV`           | Commavid extra RAM                |
+| `.EB`           | Econobanking                      |
+| `.EF`           | EF Bankswitching                  |
+| `.EFR`          | EF with RAM                       |
+| `.UA`           | UA bankswitching                  |
+| `.X07`          | X07 bankswitching                 |
+| `.SB`           | Superbanking                      |
+
+Note: A popular ROM pack may show certain characters in file names as
+flashing characters (i.e. *pele's soccer*).  These show up as flashing
+characters in the menu. This is normal because they are outside of the
+ASCII range later.
 
 The following changes need to be made to get these games to run:
 
@@ -678,14 +709,18 @@ These need the `.CV` extension:
 
 Other changes:
 
-Dig Dug needs to have the first 256 bytes zeroed out (or set to all `0xFF`'s) so that
-the extra RAM can be detected properly.
+*Dig Dug* needs to have the first 256 bytes zeroed out (or set to all
+`0xFF`'s) so that the extra RAM can be detected properly.
 
 
-Atari 7800 Core Release Notes
 -----------------------------
 
-This Atari 7800 core supports official games and pokey sound.  It currently only supports joysticks and does not run 2600 games. Two button controllers appear to be working.
+# Atari 7800 Core Release Notes
+
+This Atari 7800 core supports official games and pokey sound.  It
+currently only supports joysticks and does not run 2600 games. Two
+button controllers appear to be working.
+
 
 Controller mapping:
 -------------------
