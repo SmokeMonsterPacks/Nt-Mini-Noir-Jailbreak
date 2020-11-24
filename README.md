@@ -722,32 +722,40 @@ currently only supports joysticks and does not run 2600 games. Two
 button controllers appear to be working.
 
 
-Controller mapping:
--------------------
+## Controller mapping
 
-This core requires the use of a SNES controller if you wish to manipulate the pause button and difficulty switches.
+This core requires the use of a SNES controller if you wish to
+manipulate the pause button and difficulty switches.
 
-`X` is pause on either controller.
-`L` and `R` triggers change the difficulty switch position for the respective player.
+- `X` is pause on either controller.
+- `L` and `R` triggers change the difficulty switch position for the
+  respective player.
+- `Select` and `Start` are `select` and `reset`, respectively.
 
-`Select` and `Start` are `select` and `reset`, respectively.
-
-The difficulty switches can also be toggled with Core Options.
-
-Mappers and ROMs:
------------------
-
-Atari 7800 ROMs use headers.  There are a few ROMs with bad headers, here is how to fix some of them :
-
-- Commando has no Pokey sound - the header needs to have it enabled. (`0036h` needs to be `03h` instead of `02h`)
-- There's a broken version of Summer Games and Winter Games.  Both need address `0036h` changed from `02h` to `06h`.
-- There is a broken version of Sentinel as well.  Byte `0036h` needs to be `02h` instead of `03h`.
-
-This core needs a BIOS to run which you can select with Core Options.  The Core will load the file `7800bios.bin` (expected CRC32: `5D13730C`) found in the `/BIOS/` directory by default.
+The difficulty switches can also be toggled with `Core Options`.
 
 
-Sega Genesis Jailbreak Notes
+## Mappers and ROMs
+
+Atari 7800 ROMs use headers.  There are a few ROMs with bad headers,
+here is how to fix some of them:
+
+- *Commando* has no Pokey sound - the header needs to have it
+  enabled. (`0036h` needs to be `03h` instead of `02h`)
+- There's a broken version of *Summer Games* and *Winter Games*.  Both
+  need address `0036h` changed from `02h` to `06h`.
+- There is a broken version of *Sentinel* as well.  Byte `0036h` needs
+  to be `02h` instead of `03h`.
+
+This core needs a BIOS to run which you can select with `Core
+Options`.  The Core will load the file `7800bios.bin` (expected CRC32:
+`5D13730C`) found in the `/BIOS/` directory by default.
+
+
 ----------------------------
+
+# Sega Genesis Jailbreak Notes
+
 
 The Sega core supports all official Genesis ROMs except for Virtua Racing and does not run 32x ROMs and common unlicensed games.
 
