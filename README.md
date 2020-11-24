@@ -756,13 +756,14 @@ Options`.  The Core will load the file `7800bios.bin` (expected CRC32:
 
 # Sega Genesis Jailbreak Notes
 
+The Sega core supports all official Genesis ROMs except for *Virtua
+Racing* and does not run 32x ROMs and common unlicensed games.
 
-The Sega core supports all official Genesis ROMs except for Virtua Racing and does not run 32x ROMs and common unlicensed games.
 
-*Button Mapping*
-----------------
+## Button Mapping
 
-With a NES controller, Button C on a Genesis 3-button controller is mapped to Select.  Other mappings are as follows:
+With a NES controller, Button `C` on a Genesis 3-button controller is
+mapped to `select`.  Other mappings are as follows:
 
 | Genesis | SNES |
 | ------- | ---- |
@@ -782,23 +783,37 @@ With a NES controller, Button C on a Genesis 3-button controller is mapped to Se
 | `Y`     | `Z` |
 | `Z`     | `C` |
 
-SMS Core Release Notes
+
 ----------------------
 
-The SMS core runs games released for the Sega Mark III and the Master System.
-This core also runs SG-1000 games but you must use the Japanese BIOS or no BIOS, however.
+# SMS Core Release Notes
 
-You can select a BIOS or disable a BIOS in the "Core Options" menu.  Disabling it all the time may not be ideal because a few games rely on it running first to set memory (see below for a list).
+The SMS core runs games released for the Sega Mark III and the Master
+System.  This core also runs SG-1000 games but you must use the
+Japanese BIOS or no BIOS, however.
 
-The BIOS is only loaded when a game is loaded.  To change the BIOS you must reload the game. If it is missing, loading will fail and it will return you to the core menu.  Place the BIOS into the `/BIOS/` directory on the SD card and try again, or turn the BIOS off in the "Core Options" menu.
+You can select a BIOS or disable a BIOS in the `Core Options` menu.
+Disabling it all the time may not be ideal because a few games rely on
+it running first to set memory (see below for a list).
 
-The core will load the file with the name `smsbios.bin` by default if one is found in the `/BIOS/` directory.
+The BIOS is only loaded when a game is loaded.  To change the BIOS you
+must reload the game. If it is missing, loading will fail and it will
+return you to the core menu.  Place the BIOS into the `/BIOS/`
+directory on the SD card and try again, or turn the BIOS off in the
+`Core Options` menu.
 
-You may need to change to an "export" region under "System/Hardware" to get some games or BIOSes to work. 
+The core will load the file with the name `smsbios.bin` by default if
+one is found in the `/BIOS/` directory.
 
-Because there are three mappers supported, selecting one of the different mappers works by changing the file extention of the ROM file.  
+You may need to change to an `export` region under `System/Hardware`
+to get some games or BIOSes to work.
 
-A ROM that's 48K or less in size is run without a mapper;  it is just loaded straight into 0000-BFFF.  
+Because there are three mappers supported, selecting one of the
+different mappers works by changing the file extention of the ROM
+file.
+
+A ROM that's 48K or less in size is run without a mapper; it is just
+loaded straight into `x0000-xBFFF`.
 
 A ROM with a size greater than 48K will use the standard Sega mapper.
 
@@ -817,36 +832,52 @@ Other mappers supported:
 - Jang Pung 3 (Korea) (Unl)
 - Samgukji 3 (Korea) (Unl)
 
-Any other extention is valid, and will just load as either no mapper or the standard Sega one.
+Any other extention is valid, and will just load as either no mapper
+or the standard Sega one.
 
-The system will properly run larger, bankswitched BIOS ROMs such as the combined BIOS+Hang On, etc. ROMs.
+The system will properly run larger, bankswitched BIOS ROMs such as
+the combined BIOS+Hang On, etc. ROMs.
 
-Some ROMs have a useless 512 byte header at the beginning that is mostly 0's. If this is found, it is ignored.
+Some ROMs have a useless 512 byte header at the beginning that is
+mostly `x00`'s. If this is found, it is ignored.
 
-Some versions of the system have a "game reset" button.  You may activate this feature by pressing `select` and `X` at the same time on a SNES controller.  That is a safeguard to prevent it accidentally being pressed and resetting the game.
+Some versions of the system have a `game reset` button.  You may
+activate this feature by pressing `select` and `X` at the same time on
+a SNES controller.  That is a safeguard to prevent it accidentally
+being pressed and resetting the game.
 
 Pause is mapped to the `start` button like you'd expect.
 
-Lastly, you can turn the YM2413 on and off.  This is because a couple games crash if it's on.
+Lastly, you can turn the YM2413 on and off.  This is because a couple
+games crash if it's on.
 
-*Problems and how to solve them*
---------------------------------
-SG-1000:
-Unselect "Use BIOS" for playing these games or select the Japanese BIOS.
-Also, select Japan as the Region in System/Hardware.
 
-Terebi Oekaki: needs a drawing tablet and will not start without it.
+## Problems and how to solve them
 
-SMS:
-You may need to pivot between the US and Japanese BIOSes for certain games to work.  The US BIOS performs a region check and will not play games (such as Sega's Japanese games) that do not pass the check.
+**SG-1000**: Unselect `Use BIOS` for playing these games or select the
+Japanese BIOS.  Also, select Japan as the Region in `System/Hardware`.
 
-- PAL games might have problems such as sprite flicker- this is normal and happens on an NTSC system too.
-- Some games (Walter Payton Football, Spy vs. Spy) need the US BIOS to work.  The former runs but has initial title screen corruption and the latter doesn't start at all.
+*Terebi Oekaki*: needs a drawing tablet and will not start without it.
+
+**SMS**: You may need to pivot between the US and Japanese BIOSes for
+certain games to work.  The US BIOS performs a region check and will
+not play games (such as Sega's Japanese games) that do not pass the
+check.
+
+- PAL games might have problems such as sprite flicker; this is normal
+  and happens on an NTSC system too.
+- Some games (*Walter Payton Football*, *Spy vs. Spy*) need the US
+  BIOS to work.  The former runs but has initial title screen
+  corruption and the latter doesn't start at all.
 - MSX Ports larger than 48K use unusual mappers and are not supported.
-- Games that require a paddle controller, light gun or the 3-D glasses will not work.
-- Wanted - you must turn off FM for this game to work but it still requires a light gun
-- Super Tank - select one of the "export" options in System/Hardware.
-- Back to the Future 3: locks up at black screen because it detects PAL/NTSC and will refuse to work if it detects NTSC
+- Games that require a paddle controller, light gun or the 3-D glasses
+  will not work.
+- *Wanted* - you must turn off FM for this game to work but it still
+  requires a light gun
+- *Super Tank* - select one of the `export` options in
+  `System/Hardware`.
+- *Back to the Future 3* - locks up at black screen because it detects
+  PAL/NTSC and will refuse to work if it detects NTSC
 
 
 Game Gear Core Release Notes
