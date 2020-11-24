@@ -880,14 +880,21 @@ check.
   PAL/NTSC and will refuse to work if it detects NTSC
 
 
-Game Gear Core Release Notes
 ----------------------------
 
-Early models of Game Gear did not include a BIOS, but later ones did.  If you wish to see that blue startup screen, you can by selecting the BIOS file under "core options".  The core will load a file with the name `ggbios.bin` (expected CRC32: `0EBEA9D4`) by default if found in the `/BIOS/` directory.
+# Game Gear Core Release Notes
 
-Because there are three mappers, selecting one of the different mappers works by changing the file extention of the ROM file.  
+Early models of Game Gear did not include a BIOS, but later ones did.
+If you wish to see that blue startup screen, you can by selecting the
+BIOS file under `core options`.  The core will load a file with the
+name `ggbios.bin` (expected CRC32: `0EBEA9D4`) by default if found in
+the `/BIOS/` directory.
 
-A ROM that's 48K or less in size is run without a mapper;  it is just loaded straight into 0000-BFFF.  
+Because there are three mappers, selecting one of the different
+mappers works by changing the file extention of the ROM file.
+
+A ROM that's 48K or less in size is run without a mapper; it is just
+loaded straight into `x0000-xBFFF`.
 
 A ROM greater than this size will use the standard Sega mapper.
 
@@ -895,12 +902,14 @@ Other mappers supported:
 - `*.GCM` - selects the SMS Codemasters mappers
 - `*.GKR` - selects the SMS Korean mapper.
 
-Any other extention is valid, and will just load as either no mapper or the standard Sega one.
+Any other extention is valid, and will just load as either no mapper
+or the standard Sega one.
 
-*Problems and how to solve them*
---------------------------------
 
-These games are not actually Game Gear games but were released on the system and operate in SMS mode. You can play them on the SMS core:
+## Problems and how to solve them
+
+These games are not actually Game Gear games but were released on the
+system and operate in SMS mode. You can play them on the SMS core:
 
 - Castle of Illusion - Starring Mickey Mouse
 - Cave Dude (Proto)
@@ -919,7 +928,7 @@ These games are not actually Game Gear games but were released on the system and
 - Super Tetris (Unl)
 - WWF WrestleMania Steel Cage Challenge
 
-These games need the .GCM file extension :
+These games need the .GCM file extension:
 
 - CJ Elephant Fugitive
 - Cosmic Spacehead
@@ -932,7 +941,9 @@ These games need the .GCM file extension :
 - Micro Machines 2: Turbo Tournament
 - Pete Sampras Tennis
 
-The Core will not play any games that use EEPROM for saving properly at this time, they will refuse to load.  The following games are the only known games to use EEPROM :
+The Core will not play any games that use EEPROM for saving properly
+at this time, they will refuse to load.  The following games are the
+only known games to use EEPROM:
 
 - Hyper Pro Yakyuu '92
 - Majors Pro Baseball, The
@@ -941,130 +952,207 @@ The Core will not play any games that use EEPROM for saving properly at this tim
 - World Series Baseball '95 (including prototypes)
 
 
-Colecovision Core Release Notes
 -------------------------------
 
-The Coleco core will run games designed for the unenhanced ColecoVision as well as Super Game Module games.
+# Colecovision Core Release Notes
 
-Loading a BIOS is required for this Core to load ROMs.  Load a BIOS under the core options menu.  The Core will automatically load a file named `colbios.bin` if found in the `/BIOS/` directory, but you can use the Select New BIOS File option to select a BIOS file with any name.
-| Coleco BIOS CRC32 | Description |
-| ----------------- | ----------- |
-| `3AA93EF3`        | Official    |
+The Coleco core will run games designed for the unenhanced
+ColecoVision as well as Super Game Module games.
+
+Loading a BIOS is required for this Core to load ROMs.  Load a BIOS
+under the `core options` menu.  The Core will automatically load a
+file named `colbios.bin` if found in the `/BIOS/` directory, but you
+can use the Select New BIOS File option to select a BIOS file with any
+name.
+
+| Coleco BIOS CRC32 | Description                                 |
+| ----------------- | -----------                                 |
+| `3AA93EF3`        | Official                                    |
 | `39BB16FC`        | Unofficial, stylized font, can skip waiting |
-| `4999ABC6`        | Bit Corp clone |
+| `4999ABC6`        | Bit Corp clone                              |
 
-*Button mapping*
-----------------
 
-A SNES Controller (or any compatible 12-button controller) or NTT Data Pad is ideal for this core.  The NTT Data Pad's numberpad is directly mapped the Coleco controller's numberpad.  Same for the Famicom Network Controller.
+## Button mapping
 
-If using a standard SNES Controller, this is how the Coleco numberpad maps to the SNES buttons:
-| SNES Button/Combo   | Assignment |
-| ------------------- | ---------- |
-| `Start`             | `1` (this usually selects the easiest game difficulty) |
-| `Select`            | `3` (this usually selects a harder game) |
+A SNES Controller (or any compatible 12-button controller) or NTT Data
+Pad is ideal for this core.  The NTT Data Pad's numberpad is directly
+mapped the Coleco controller's numberpad.  Same for the Famicom
+Network Controller.
+
+If using a standard SNES Controller, this is how the Coleco numberpad
+maps to the SNES buttons:
+
+| SNES Button/Combo   | Assignment                                                     |
+| ------------------- | ----------                                                     |
+| `Start`             | `1` (this usually selects the easiest game difficulty)         |
+| `Select`            | `3` (this usually selects a harder game)                       |
 | `X`                 | `#` (a popular option for some games to use as a start button) |
-| `A`                 | `*` (another popular option to start games) |
-| `L` + `up`          | `0` |
-| `L` + `right`       | `1` |
-| `L` + `down`        | `2` |
-| `L` + `left`        | `3` |
-| `R` + `up`          | `4` |
-| `R` + `right`       | `5` |
-| `R` + `down`        | `6` |
-| `R` + `left`        | `7` |
-| `L` + `R` + `up`    | `8` |
-| `L` + `R` + `right` | `9` |
-
-*Special ROM handling*
----------------------------------
-Two reproduction games, The Black Onyx and Boxxle use EEPROM for saving, 256 bytes and 32KB, respectively.  Rename their extensions to `.ce0` and `.ce1`, respectively to get them working.  A third reproduction game, Gradius, saves to flash memory and uses a custom mapper.  Rename its extension to `.cf0` to get it working. 
+| `A`                 | `*` (another popular option to start games)                    |
+| `L` + `up`          | `0`                                                            |
+| `L` + `right`       | `1`                                                            |
+| `L` + `down`        | `2`                                                            |
+| `L` + `left`        | `3`                                                            |
+| `R` + `up`          | `4`                                                            |
+| `R` + `right`       | `5`                                                            |
+| `R` + `down`        | `6`                                                            |
+| `R` + `left`        | `7`                                                            |
+| `L` + `R` + `up`    | `8`                                                            |
+| `L` + `R` + `right` | `9`                                                            |
 
 
-Gameboy Core Release Notes
+## Special ROM handling
+
+Two reproduction games, *The Black Onyx* and *Boxxle* use EEPROM for
+saving, 256 bytes and 32KB, respectively.  Rename their extensions to
+`.ce0` and `.ce1`, respectively to get them working.  A third
+reproduction game, *Gradius*, saves to flash memory and uses a custom
+mapper.  Rename its extension to `.cf0` to get it working.
+
+
 --------------------------
 
-The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy's bootstrap (BIOS) for it to work.  `dmgbios.bin` (expected CRC32: `59C8598E`) is the default file to be loaded if found in the `/BIOS/` directory.  The Super Gameboy bootstrap `dmgbios2.bin` (example CRC32: `EC8A83B9`) also seems to work and skips the scrolling intro.
+# Gameboy Core Release Notes
+
+The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC
+saving) and MBC5 (except rumble).  You must select the Gameboy's
+bootstrap (BIOS) for it to work.  `dmgbios.bin` (expected CRC32:
+`59C8598E`) is the default file to be loaded if found in the `/BIOS/`
+directory.  The Super Gameboy bootstrap `dmgbios2.bin` (example CRC32:
+`EC8A83B9`) also seems to work and skips the scrolling intro.
 
 
-Gameboy Color Core Release Notes
 ---------------------------------
 
-The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy Color's bootstrap (BIOS) for it to work.  `gbcbios.bin` (expected CRC32: `41884E46`) is the default file to be loaded if found in the `/BIOS/` directory.
+# Gameboy Color Core Release Notes
+
+The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except
+RTC saving) and MBC5 (except rumble).  You must select the Gameboy
+Color's bootstrap (BIOS) for it to work.  `gbcbios.bin` (expected
+CRC32: `41884E46`) is the default file to be loaded if found in the
+`/BIOS/` directory.
 
 
-Intellivision Core Release Notes
 --------------------------------
 
-The Intellivision core supports games for the base system, the Intellivoice speech attachment and to some extent, the Enhanced Computer System addon (ECS).
+# Intellivision Core Release Notes
 
-You may load the Executive BIOS file for the Intellivision by name.  You will also need the GROM binary placed in the `/BIOS/` directory.
+The Intellivision core supports games for the base system, the
+Intellivoice speech attachment and to some extent, the Enhanced
+Computer System addon (ECS).
 
-To use the Intellivoice, the 2K ROM for the speech chip has to be present in the `/BIOS/` directory and named `012.bin`.
+You may load the Executive BIOS file for the Intellivision by name.
+You will also need the GROM binary placed in the `/BIOS/` directory.
 
-*Controller support*
---------------------
+To use the Intellivoice, the 2K ROM for the speech chip has to be
+present in the `/BIOS/` directory and named `012.bin`.
 
-Only the NTT Data Pad or the Famicom Network Controller can fully map the numberpads of the Intellivision controller.
 
-By default, the controller plugged into port two on the console will likely be seen as player one by the game, so the Core Options menu allows you to swap controllers.  It also allows you to enable ECS, Intellivoice and Intellicart mapping.  
+## Controller support
 
-*INTV2 ROM Format*
-------------------
+Only the NTT Data Pad or the Famicom Network Controller can fully map
+the numberpads of the Intellivision controller.
 
-Because Intv games map themselves into various areas of memory, the ROM must be able to tell the Core into which areas of memory address space game code and data are to be loaded.  There is more than one existing format for Intellivision ROMs.
+By default, the controller plugged into port two on the console will
+likely be seen as player one by the game, so the `Core Options` menu
+allows you to swap controllers.  It also allows you to enable ECS,
+Intellivoice and Intellicart mapping.
 
-The existing Intellivision ROM conventions were deemed unsuitable to the Intellivision Core.  To make something usable, a new file format was created called INTV2.  It has the extension `.intv` and the Core will only load Intellivision ROMs in this format.
 
-The files are a relatively simple format.  All data is stored in little endian form, with the lowest 8 bits first and the upper 2 bits (for decles) stored next with the top 6 bits 0's.  This format allows the storage of 16 bit words too, since some homebrews use these instead.  It is also stored in little endian format.
+## INTV2 ROM Format
 
-Since the ROMs self-map into memory, some provision to define where data goes is needed, thus a chunked format was devised.   
+Because Intv games map themselves into various areas of memory, the
+ROM must be able to tell the Core into which areas of memory address
+space game code and data are to be loaded.  There is more than one
+existing format for Intellivision ROMs.
 
-Each file consists of 1 or more chunks, which define the start address in memory where the data is to be loaded, and its length followed by the actual data.  The last chunk is simply an address and length of 0.
+The existing Intellivision ROM conventions were deemed unsuitable to
+the Intellivision Core.  To make something usable, a new file format
+was created called INTV2.  It has the extension `.intv` and the Core
+will only load Intellivision ROMs in this format.
 
-All address and length values are little endian.  Each field is 32 bits.  The first 64K of the address space is the Intellivision's memory map directly.  Each address is a word address, so `0x5000` is word address `0x5000` (which would technically be byte `0xa000` on a modern system).
+The files are a relatively simple format.  All data is stored in
+little endian form, with the lowest 8 bits first and the upper 2 bits
+(for decles) stored next with the top 6 bits `0`'s.  This format
+allows the storage of 16 bit words too, since some homebrews use these
+instead.  It is also stored in little endian format.
 
-Here's an example using Burgertime.  It is a 16K game (8K words).  It maps into memory at `0x5000`, and has a length of `0x2000` (words).  It is constructed as so:
+Since the ROMs self-map into memory, some provision to define where
+data goes is needed, thus a chunked format was devised.
+
+Each file consists of 1 or more chunks, which define the start address
+in memory where the data is to be loaded, and its length followed by
+the actual data.  The last chunk is simply an address and length of 0.
+
+All address and length values are little endian.  Each field is 32
+bits.  The first 64K of the address space is the Intellivision's
+memory map directly.  Each address is a word address, so `0x5000` is
+word address `0x5000` (which would technically be byte `0xa000` on a
+modern system).
+
+Here's an example using *Burgertime*.  It is a 16K game (8K words).
+It maps into memory at `0x5000`, and has a length of `0x2000` (words).
+It is constructed as so:
+
 ```
 / address \ /  length \     ROM data          / address \ /  length \
 00 50 00 00 00 20 00 00 <16K of data follows> 00 00 00 00 00 00 00 00
 ```
-Bit 16 of the address right now selects if this area is writeable or not (i.e. RAM).
-The other bits may be used in the future for bankswitched games and/or homebrews as they arise.
 
-The BIOS you wish to use also needs to be in this format, since the different BIOSes (i.e. intv2) load data in different places.
+Bit 16 of the address right now selects if this area is writeable or
+not (i.e. RAM).  The other bits may be used in the future for
+bankswitched games and/or homebrews as they arise.
 
-Adventurevision Core Release Notes
+The BIOS you wish to use also needs to be in this format, since the
+different BIOSes (i.e. intv2) load data in different places.
+
+
 ----------------------------------
 
-The Adventurevision core runs all games.  The Code Red demo does not run as well as the games because it does not use BIOS routines for graphics drawing.
+# Adventurevision Core Release Notes
+
+The Adventurevision core runs all games.  The Code Red demo does not
+run as well as the games because it does not use BIOS routines for
+graphics drawing.
 
 There are two BIOS files needed for this core:
-| File          | Description |
-| ------------- | ----------- |
+
+| File          | Description                                                               |
+| ------------- | -----------                                                               |
 | `avbios.bin`  | This is the 1K ROM found inside the 8048 on the system. CRC32: `279E33D1` |
-| `avsound.bin` | This is the 512 byte ROM on the sound CPU. CRC32: `81E95975` |
+| `avsound.bin` | This is the 512 byte ROM on the sound CPU. CRC32: `81E95975`              |
 
-Both of these need to be put in the `/BIOS/` directory and named as identified above.
+Both of these need to be put in the `/BIOS/` directory and named as
+identified above.
 
-Turtles seems to have a graphical "bug" on it, the right size of the maze is shifted right by a pixel, but this is how the real system runs it.
+*Turtles* seems to have a graphical "bug" on it, the right size of the
+maze is shifted right by a pixel, but this is how the real system runs
+it.
 
-Defender likewise has a bad collision bug on original hardware, you can often shoot through enemies, this appears to occur due to the game checking only when your shots touch the edge of an enemy sprite.
+*Defender* likewise has a bad collision bug on original hardware, you
+can often shoot through enemies, this appears to occur due to the game
+checking only when your shots touch the edge of an enemy sprite.
 
 
-Arcadia 2001 Core Release Notes
 -------------------------------
 
-The Aradia 2001 core runs known 2001 games, but there are other systems based on the same/similar chips.  Games for these systems may or may not run on this core.  
+# Arcadia 2001 Core Release Notes
 
-Several prototypes of released games have graphics issues that the released versions fixed.  
+The Aradia 2001 core runs known 2001 games, but there are other
+systems based on the same/similar chips.  Games for these systems may
+or may not run on this core.
 
-Some homebrews games rely on the numberpad rather than the joystick to move.
+Several prototypes of released games have graphics issues that the
+released versions fixed.
 
-Controls:
----------
+Some homebrews games rely on the numberpad rather than the joystick to
+move.
 
-You can use the keypad of an NTT Data Pad  or press "chords" on a SNES controller.  The "chording" works similar to the Colecovision:
+
+## Controls
+
+You can use the keypad of an NTT Data Pad or press "chords" on a SNES
+controller.  The "chording" works similar to the Colecovision:
+
 ```
 Ltrig + up = 0
 Ltrig + right = 1
@@ -1089,54 +1177,73 @@ select = select (both controllers)
 Y = fire button
 ```
 
-Channel F Core Release Notes
+
 ----------------------------
 
-The Channel F BIOS is required to be present in the `/BIOS/` directory and it must be named `cfbios.bin` (expected CRC32: `2882C02D`).
+# Channel F Core Release Notes
 
-*Button mapping*
-----------------
+The Channel F BIOS is required to be present in the `/BIOS/` directory
+and it must be named `cfbios.bin` (expected CRC32: `2882C02D`).
 
-There are four buttons on the Channel F system to select a game, time length, and other things. Starting a game involves optionally setting these to start playing.
 
-On this core, the mapping of these four buttons is as such to a SNES controller:
+## Button mapping
+
+There are four buttons on the Channel F system to select a game, time
+length, and other things. Starting a game involves optionally setting
+these to start playing.
+
+On this core, the mapping of these four buttons is as such to a SNES
+controller:
+
 ```
 1 - left trigger
 2 - right trigger
 3 - select
 4 - start
 ```
-If you have an NTT Data Pad, `1, 2, 3, 4` map to `1, 2, 3, 4` on the NTT Data Pad's numeric keypad.  
+
+If you have an NTT Data Pad, `1, 2, 3, 4` map to `1, 2, 3, 4` on the
+NTT Data Pad's numeric keypad.
 
 Using it:
 
-When the system is reset, it says `G?` on the screen.  It is asking which game to play.  Hitting
-one of the four buttons results in selecting one of the 4 games on the cartridge.
+When the system is reset, it says `G?` on the screen.  It is asking
+which game to play.  Hitting one of the four buttons results in
+selecting one of the 4 games on the cartridge.
+
 ```
  (left trigger) 1 - "game 1" (from the cart, or the BIOS if "play bios games" file is run)
 (right trigger) 2 - "game 1" (from the cart, or the BIOS if "play bios games" file is run)
        (select) 3 - "game 3" (from the cart)
         (start) 4 - "game 4" (from the cart)
 ```
-Next, it will print `S?` on the screen.  You can either start a game now or enter more options.
-These options are:
+
+Next, it will print `S?` on the screen.  You can either start a game
+now or enter more options.  These options are:
+
 ```
  (left trigger) 1 - time limit
 (right trigger) 2 - game speed/(mode or motion)
         (start) 4 - start game immediately
 ```
-If you press `1` for a time limit, then `T?` is displayed.  You can choose a time limit using the
-four buttons:
+
+If you press `1` for a time limit, then `T?` is displayed.  You can
+choose a time limit using the four buttons:
+
 ```
  (left trigger) 1 - 2 minutes
 (right trigger) 2 - 5 minutes
        (select) 3 - 10 minutes
         (start) 4 - 20 minutes
 ```
-At this time, you can press either `1`, `2`, or `4` since it should be back at the S? prompt.
 
-If you had pressed `2` for a mode (motion / speed) `M?` will be displayed.   Generally, 1-4
-will be the speed of the game from slow to fast.
+At this time, you can press either `1`, `2`, or `4` since it should be
+back at the S? prompt.
+
+If you had pressed `2` for a mode (motion / speed) `M?` will be
+displayed.  Generally, 1-4 will be the speed of the game from slow to
+fast.
+
 ```
  (left trigger) 1 - speed 1
 (right trigger) 2 - speed 2
@@ -1145,75 +1252,110 @@ will be the speed of the game from slow to fast.
 ```
 As with the time setting, it should be back at the `S?` prompt, ready for the next option.
 
-For general-variety playing, you can simply load a game and hit ltrig/rtrig/select/start then start
-to start one of the 4 games.
+For general-variety playing, you can simply load a game and hit
+`ltrig`/`rtrig`/`select`/`start` then `start` to start one of the 4
+games.
 
-It seems many games choose one controller port at random to use for player 1 (i.e. some games use controller port 1, some use controller port 2) so if a game does not seem playable, add a second controller or swap ports.
+It seems many games choose one controller port at random to use for
+player 1 (i.e. some games use controller port 1, some use controller
+port 2) so if a game does not seem playable, add a second controller
+or swap ports.
 
 
-Creativision Core Release Notes
 -------------------------------
 
-You must press reset after loading a game on this system to play it.
+# Creativision Core Release Notes
 
-The Creativision plays games and supports the keyboard but tape saving and loading are not working.
+You must press `reset` after loading a game on this system to play it.
 
-The Creativision BIOS must be present in the `/BIOS/` directory and named
-`crbios.bin`, expected CRC32: `05602697`
+The Creativision plays games and supports the keyboard but tape saving
+and loading are not working.
 
-*Button mapping*
-----------------
-
-Even though there is no support for a physical keyboard, the games are still playable using a regular controller.
-
-The `B` and `A` buttons are mapped to the two fire buttons, and start/select are mapped to the two most common buttons used to start the games.  
-
-On startup, most games will run, show a demo mode and even appear to respond to controller input.  To get out of demo mode, you must reset the system.
+The Creativision BIOS must be present in the `/BIOS/` directory and
+named `crbios.bin`, expected CRC32: `05602697`
 
 
-Gamate Core Release Notes
+## Button mapping
+
+Even though there is no support for a physical keyboard, the games are
+still playable using a regular controller.
+
+The `B` and `A` buttons are mapped to the two fire buttons, and
+`start`/`select` are mapped to the two most common buttons used to
+start the games.
+
+On startup, most games will run, show a demo mode and even appear to
+respond to controller input.  To get out of demo mode, you must reset
+the system.
+
+
 -------------------------
 
-This core needs a BIOS, and there's two known BIOSes: a Bit Corp version (CRC32: `07090415`) and a UMC version (CRC32: `03A5F3A7`). Either can be used, but it must be named `gmbios.bin` and placed in the `/BIOS/` directory on your SD card.
+# Gamate Core Release Notes
 
-There are three mappers on the system, and two of these can be distinguished by file size, however the multicart(s) need the `.GML` extension.  So rename the file from i.e. `4-in-1.bin` to `4-in-1.gml` to run it.
+This core needs a BIOS, and there's two known BIOSes: a Bit Corp
+version (CRC32: `07090415`) and a UMC version (CRC32:
+`03A5F3A7`). Either can be used, but it must be named `gmbios.bin` and
+placed in the `/BIOS/` directory on your SD card.
+
+There are three mappers on the system, and two of these can be
+distinguished by file size, however the multicart(s) need the `.GML`
+extension.  So rename the file from i.e. `4-in-1.bin` to `4-in-1.gml`
+to run it.
 
 
-Game King Core Release Notes
 -------------------------
 
-This core needs a BIOS.  It should be named `gkbios.bin` (sometimes it can be found named `gm218.bin`) and place it in the `/BIOS/` directory on your SD card. Expected CRC32: `5A1ADE3D`.
+# Game King Core Release Notes
 
-There's three built in games to the system, so if you wish to play these, simply run the included file, `play bios games.bin`.  This is an empty file consisting of nothing but bytes of `0xff`.  This simulates having no cartridge in the system.
+This core needs a BIOS.  It should be named `gkbios.bin` (sometimes it
+can be found named `gm218.bin`) and place it in the `/BIOS/` directory
+on your SD card. Expected CRC32: `5A1ADE3D`.
+
+There's three built in games to the system, so if you wish to play
+these, simply run the included file, `play bios games.bin`.  This is
+an empty file consisting of nothing but bytes of `0xff`.  This
+simulates having no cartridge in the system.
 
 
-Odyssey^2 Core Release Notes
 ----------------------------
 
-The Odyssey^2 core supports keyboards via PS2 and an adapter that plugs into the Famicom expansion port.  If you wish to make an adapter, you can find the
-schematic in the `/SYSTEM/` directory.
+# Odyssey^2 Core Release Notes
 
-The Voice speech expansion add-on is also complete and fully functional if you wish to hear speech/sound effects in the games that support it.
+The Odyssey^2 core supports keyboards via PS2 and an adapter that
+plugs into the Famicom expansion port.  If you wish to make an
+adapter, you can find the schematic in the `/SYSTEM/` directory.
 
-Some games (such as Frogger) play poorly with The Voice being enabled all the time, but most games will work fine with it enabled.  On Frogger it will constantly repeat an allophone over and over.  This is not a bug but a byproduct of how The Voice works.  
+The Voice speech expansion add-on is also complete and fully
+functional if you wish to hear speech/sound effects in the games that
+support it.
+
+Some games (such as *Frogger*) play poorly with The Voice being
+enabled all the time, but most games will work fine with it enabled.
+On *Frogger* it will constantly repeat an allophone over and over.
+This is not a bug but a byproduct of how The Voice works.
 
 This core needs a BIOS.  It should be named:
+
 ```
 o2bios.bin    - Main 8048 BIOS (1K byte)  CRC32: 8016A315
 ```
-This BIOS file can be selected with Core Options.
 
-If you wish to use the voice, you need three files:
+This BIOS file can be selected with `Core Options`. If you wish to use
+the voice, you need three files:
+
 ```
 019.bin       - Speech ROM in the SP0256-019 speech chip (2K bytes)  CRC32: 19355075
 sp128_03.bin  - Speech ROM resident in the speech module (16K bytes) CRC32: 66041B03
 sp128_04.bin  - Speech ROM in Sid the Spellbinder (16K bytes)        CRC32: 6780C7D3
 ```
+
 Place them in the `/BIOS/` directory and name them as indicated above.
 
-Controller mapping:
+The controller maps the directionals directly to the Odyssey^2
+directions as you'd expect.  On a SNES controller the mapping is as
+follows :
 
-The controller maps the directionals directly to the Odyssey^2 directions as you'd expect.  On a SNES controller the mapping is as follows :
 ```
 Y is the fire button
 start is "1" on the keyboard
@@ -1223,38 +1365,52 @@ X is "4" on the keyboard
 Ltrig is "enter" on the keyboard
 Rtrig is "clear" on the keyboard
 ```
-Note that some games swap the two controllers from the majority of games, so player 2 is actually the controller to use for single player games.
+
+Note that some games swap the two controllers from the majority of
+games, so player 2 is actually the controller to use for single player
+games.
 
 Keyboard mapping:
 
-If you make or buy the PS2 adapter and use a PS2 keyboard you can use it directly to simulate the Odyssey^2 keyboard.
+If you make or buy the PS2 adapter and use a PS2 keyboard you can use
+it directly to simulate the Odyssey^2 keyboard.
 
-All Odyssey^2 keys map to their corresponding keys on a PC keyboard except "clear" which is mapped to backspace.
+All Odyssey^2 keys map to their corresponding keys on a PC keyboard
+except "clear" which is mapped to backspace.
 
-Most games can be played without the keyboard, due to the mapping of 1-4 from the keyboard which are usually used to start games.  Some games like Killer Bees start using the fire button.
+Most games can be played without the keyboard, due to the mapping of
+1-4 from the keyboard which are usually used to start games.  Some
+games like *Killer Bees* start using the fire button.
 
 
-RCA Studio 2 Core Release Notes
 -------------------------------
+
+# RCA Studio 2 Core Release Notes
 
 The Studio 2 core runs games and homebrew.
 
 The video display can be problematic on this Core, showing the following issues:
 
-- The selected entry on the menus flashes really fast.  
-- The screen might scroll on reset
+- The selected entry on the menus flashes really fast.
+- The screen might scroll on reset.
 - You cannot see the menu on composite/rgb if the CPU is reset.
 
-These problems are related to how the system renders video,  the CPU itself drives the video display, and when the CPU does not run, it does not generate video timing.  
+These problems are related to how the system renders video, the CPU
+itself drives the video display, and when the CPU does not run, it
+does not generate video timing.
 
-Many games on this system them start with a black screen until you press a button.  This is normal, refer to the instruction manual to determine how to start the game.
+Many games on this system them start with a black screen until you
+press a button.  This is normal, refer to the instruction manual to
+determine how to start the game.
 
-This system requires a BIOS, and it must be named `rca2bios.bin` (CRC32: `A494B339`) and placed in the `/BIOS/` directory.
+This system requires a BIOS, and it must be named `rca2bios.bin`
+(CRC32: `A494B339`) and placed in the `/BIOS/` directory.
 
-Controller mapping:
--------------------
 
-The system has two 10 key keypads.  These are almost always used as a "joystick".  Here is how it maps to a SNES Controller :
+## Controller mapping
+
+The system has two 10 key keypads.  These are almost always used as a
+"joystick".  Here is how it maps to a SNES Controller :
 
 | RCA Studio 2 keypad | SNES Controller |
 | ------------------- | --------------- |
@@ -1269,51 +1425,68 @@ The system has two 10 key keypads.  These are almost always used as a "joystick"
 | `9`                 | `down`+`right`  |
 | `0`                 | `B`             |
 
-You can hold down `A` which will disable the D-pad on the controller so you can easily press `1`, `3`, `9`, or `7` (the diagonals) without hitting one of the cardinal
-directions.
+You can hold down `A` which will disable the D-pad on the controller
+so you can easily press `1`, `3`, `9`, or `7` (the diagonals) without
+hitting one of the cardinal directions.
 
 If you have an NTT Data Pad, you can use its numberpad to hit `0`-`9`.
 
 This core uses a monochrome menu.  This is normal.
 
-Note: When the system is first started and a game is loaded, it's overwritten by the BIOS games,
-so the first games that will play are the BIOS games.  Loading another game or the same one again
-will cause it to load the game as desired.
+Note: When the system is first started and a game is loaded, it's
+overwritten by the BIOS games, so the first games that will play are
+the BIOS games.  Loading another game or the same one again will cause
+it to load the game as desired.
 
 
-Supervision Core Release Notes
 ------------------------------
+
+# Supervision Core Release Notes
 
 The Supervision core plays all games and does not require a BIOS.
 
-sssnake appears to output a very quiet sound when you pick something up, but this is a bug in the program.  The game is playing one of the drum samples really slowly so it doesn't make much sound.
+*sssnake* appears to output a very quiet sound when you pick something
+up, but this is a bug in the program.  The game is playing one of the
+drum samples really slowly so it doesn't make much sound.
 
 
-Videobrain Core Release Notes
 -----------------------------
 
-The Videobrain supports keyboards via a PS2 keyboard and the Odyssey^2 adapter.
+# Videobrain Core Release Notes
+
+The Videobrain supports keyboards via a PS2 keyboard and the Odyssey^2
+adapter.
 
 This core needs a pair BIOS ROMs. They must be named:
+
 ```
 uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2`
 uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE`
 ```
+
 Place them in the `/BIOS/` directory.
 
 Controller mapping:
 
-The controller maps the directionals directly to the Videobrain's directionals
+The controller maps the directionals directly to the Videobrain's
+directionals
 
 `B` is the fire button
 
-Keyboard mapping:
------------------
 
-If you use the PS2 adapter and keyboard, the PC keyboard maps as follows :
+## Keyboard mapping
+
+If you use the PS2 adapter and keyboard, the PC keyboard maps as
+follows:
 
 `A`-`Z` maps to `A`-`Z`
-Capslock is the Shift key because the Capslock function is controlled by the system.  The state of shift is indicated on screen with a box at the bottom right.  If it's black, it's unshifted and `A`-`Z` works like usual.  If it's grey, shift is on and symbols and numbers are usable.  The mapping of the keyboard when shifted and unshifted is as follows:
+
+Capslock is the `shift` key because the Capslock function is
+controlled by the system.  The state of shift is indicated on screen
+with a box at the bottom right.  If it's black, it's unshifted and
+`A`-`Z` works like usual.  If it's grey, shift is on and symbols and
+numbers are usable.  The mapping of the keyboard when shifted and
+unshifted is as follows:
 
 Non-shifted characters:
 ```
@@ -1327,7 +1500,13 @@ F10 - pi symbol
 F11 - division symbol
 F12 - multiplication symbol
 ```
-These characters and symbols are "dual mapped", because shift/nonshift is not known by the keyboard, due to the shift being handled in the VideoBrain itself, so if you are unshifted and press `%`, `Q` will print to the screen.  Likewise if it is shifted and `Q` is pressed, `%` will appear.
+
+These characters and symbols are "dual mapped", because shift/nonshift
+is not known by the keyboard, due to the shift being handled in the
+VideoBrain itself, so if you are unshifted and press `%`, `Q` will
+print to the screen.  Likewise if it is shifted and `Q` is pressed,
+`%` will appear.
+
 ```
 F1 - restart/erase
 F2 - run/stop
@@ -1336,23 +1515,30 @@ F4 - clock/next
 F5 - color/previous
 F6 - text/back
 ```
-Playing the games:
-------------------
 
-Many of the games need the keyboard to start them.
+## Playing the games
 
-There is an empty binary file that lets you use the built in BIOS functions.
+Many of the games need the keyboard to start them. There is an empty
+binary file that lets you use the built in BIOS functions.
 
 
-Megaduck Release Notes
 ----------------------
+
+# Megaduck Release Notes
 
 Megaduck has no BIOS but it does have mappers.
 
-*Special ROM handling*
----------------------------------
-There are two different mappers for Megaduck.  They are selected by extension.  `.MD1` selects the single 32K selectable bank mode, and `.MD2` selects the 16K selectable bank mode.
-All games greater than 32K need the `.MD2` extension except for the following two games:
+
+## Special ROM handling
+
+There are two different mappers for Megaduck.  They are selected by
+extension.  `.MD1` selects the single 32K selectable bank mode, and
+`.MD2` selects the 16K selectable bank mode.
+
+All games greater than 32K need the `.MD2` extension except for the
+following two games:
 - Puppet Knight
 - Suleiman's Treasure
-These need the `.MD1` extension.  32K games do not need a special extension.
+
+These need the `.MD1` extension.  32K games do not need a special
+extension.
