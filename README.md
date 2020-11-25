@@ -36,7 +36,9 @@ firmware file from your card after flashing.  The main menu will
 present a new option, `Cores`, to signify it is Jailbreak mode.
 
 The Nt Mini Noir is protected from bricking as a result of firmware
-updates, but follow the above precautions to be safe.
+updates, but follow the above precautions to be safe. If need be you
+can always reinstall the [official
+firmware](https://support.analogue.co/hc/en-us/articles/360052916371-Nt-mini-Noir-Firmware-Update-v1-0).
 
 
 ## Step 2: System Setup
