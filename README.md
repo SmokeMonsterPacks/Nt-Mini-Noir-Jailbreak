@@ -36,7 +36,7 @@ updates, but follow the above precautions to be safe.
 
 ## Step 2: System Setup
 Unzip
-[SD%20Card%20System%20Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
+[SD Card System Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
 into the root directory of your SD card. You will now have a set of folders 
 reflecting where game ROMs should be stored. Follow the instructions below for 
 configuring the `/BIOS/` folder.
