@@ -9,7 +9,11 @@ Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 - SPC player added
 - Mandelbrot zoomer added
 
-# Updating Firmware 
+
+-------------------
+
+# Updating Firmware
+
 ## Step 1: Flashing the Firmware
 
 Format a 2GB (or larger) SD card as
@@ -21,25 +25,28 @@ supported). In Windows, you must use a tool for cards larger than
 Unzip
 [ntmv2_firmware_verJB6.2.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.2.bin)
 into the root directory of your SD card.  Be sure that there is only
-one firmware file there.  Insert the card into your Super Nt and power
-on. The firmware will be flashed to the console. This process may take
-three or more minutes.
+one firmware file there.  Insert the card into your Nt Mini Noir and
+power on. The firmware will be flashed to the console. This process
+may take three or more minutes.
 
-While the firmware is flashing the LED will flash,
-followed by a considerable pause and HDMI signal blackout.  Do not
-power off.  The system will reboot automitically when it has finished. Delete the
-firmware file from your card after flashing.  The main menu will present a new option, `Cores`, 
-to signify it is Jailbreak mode.
+While the firmware is flashing the LED will flash, followed by a
+considerable pause and HDMI signal blackout.  Do not power off.  The
+system will reboot automatically when it has finished.  Delete the
+firmware file from your card after flashing.  The main menu will
+present a new option, `Cores`, to signify it is Jailbreak mode.
 
-The Nt Mini is protected from bricking as a result of firmware
+The Nt Mini Noir is protected from bricking as a result of firmware
 updates, but follow the above precautions to be safe.
 
+
 ## Step 2: System Setup
-Unzip
-[SD Card System Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
-into the root directory of your SD card. You will now have a set of folders 
-reflecting where game ROMs should be stored. Follow the instructions below for 
-configuring the `/BIOS/` folder.
+
+Unzip [SD Card System
+Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
+into the root directory of your SD card. You will now have a set of
+folders reflecting where game ROMs should be stored. Follow the
+instructions below for configuring the `/BIOS/` folder.
+
 
 ## How to launch a core?
 
