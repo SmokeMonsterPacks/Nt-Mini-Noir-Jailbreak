@@ -22,7 +22,7 @@ supported). In Windows, you must use a tool for cards larger than
 32GB, such as
 [fat32format](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm).
 
-Unzip
+Copy
 [ntmv2_firmware_verJB6.2.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.2.bin)
 into the root directory of your SD card.  Be sure that there is only
 one firmware file there.  Insert the card into your Nt Mini Noir and
