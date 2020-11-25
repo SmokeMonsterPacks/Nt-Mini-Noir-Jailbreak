@@ -1042,8 +1042,10 @@ The Intellivision core supports games for the base system, the
 Intellivoice speech attachment and to some extent, the Enhanced
 Computer System addon (ECS).
 
-You may load the Executive BIOS file for the Intellivision by name.
-You will also need the GROM binary placed in the `/BIOS/` directory.
+You may load the Executive BIOS file for the Intellivision by name
+(`intvexec1.bin` expected CRC32: A85FC6DD).  You will also need the
+GROM binary `grom.bin` placed in the `/BIOS/` directory (expected
+CRC32: 683A4158).
 
 To use the Intellivoice, the 2K ROM for the speech chip has to be
 present in the `/BIOS/` directory and named `012.bin`.
