@@ -1,5 +1,9 @@
 # Nt-Mini-Noir-Jailbreak
 
+**Caution: as of Nov. 25, some users report that it is currently not
+possible to rollback to the official firmware. We recommend to wait
+before jailbreaking your Nt Mini Noir**
+
 Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
 - New NES core 100% supports 2.0 mappers
