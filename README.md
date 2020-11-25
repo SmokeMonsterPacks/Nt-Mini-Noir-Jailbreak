@@ -1,9 +1,5 @@
 # Nt-Mini-Noir-Jailbreak
 
-**Caution: as of Nov. 25, some users report that it is currently not
-possible to rollback to the official firmware. We recommend to wait
-before jailbreaking your Nt Mini Noir**
-
 Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
 - New NES core 100% supports 2.0 mappers
@@ -42,7 +38,10 @@ present a new option, `Cores`, to signify it is Jailbreak mode.
 The Nt Mini Noir is protected from bricking as a result of firmware
 updates, but follow the above precautions to be safe. If need be you
 can always reinstall the [official
-firmware](https://support.analogue.co/hc/en-us/articles/360052916371-Nt-mini-Noir-Firmware-Update-v1-0).
+firmware](https://support.analogue.co/hc/en-us/articles/360052916371-Nt-mini-Noir-Firmware-Update-v1-0). If
+you encounter difficulties, make sure you are following the steps
+described
+[here](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/issues/10).
 
 
 ## Step 2: System Setup
