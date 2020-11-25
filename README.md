@@ -9,35 +9,37 @@ Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 - SPC player added
 - Mandelbrot zoomer added
 
-------------------------------
+# Updating Firmware 
+## Step 1: Flashing the Firmware
 
-## How to install/update?
+Format a 2GB (or larger) SD card as
+[FAT32](https://en.wikipedia.org/wiki/FAT32) (FAT16 and exFAT are not
+supported). In Windows, you must use a tool for cards larger than
+32GB, such as
+[fat32format](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm).
 
-First off, to use the Jailbreak mode, perform the following steps:
+Unzip
+[ntmv2_firmware_verJB6.2.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.2.bin)
+into the root directory of your SD card.  Be sure that there is only
+one firmware file there.  Insert the card into your Super Nt and power
+on. The firmware will be flashed to the console. This process may take
+three or more minutes.
 
-- Format an SD card with FAT32.
-- Unzip this pack directly to the SD card, keeping all
-  directories/folders intact.
-- Add your ROMs to the proper directory.  i.e. NES ROMs go in `/NES/`
-- Insert the SD card into the Nt Mini and power it up.
-- The system will perform an update which takes approximately 3
-  minutes.  The front LED will flash.
-- After the update, the system will reboot automatically.
-- The main menu should now give a new option, `Cores`, to signify this
-  is the Jailbreak mode!
+While the firmware is flashing the LED will flash,
+followed by a considerable pause and HDMI signal blackout.  Do not
+power off.  The system will reboot automitically when it has finished. Delete the
+firmware file from your card after flashing.  The main menu will present a new option, `Cores`, 
+to signify it is Jailbreak mode.
 
-If you wish to install **just** the updates and not reformat your
-card, perform the following steps:
+The Nt Mini is protected from bricking as a result of firmware
+updates, but follow the above precautions to be safe.
 
-(general)
-
-- Replace the `/SYSTEM/` directory on your SD card.
-- Add any subdirectories that do not exist on your current card.
-- Add any new BIOS files listed in the text file in the `/BIOS/`
-  directory.
-- Load your games into the new directories.
-- On powerup, the Nt Mini will update and will be ready to go!
-
+## Step 2: System Setup
+Unzip
+[SD%20Card%20System%20Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
+into the root directory of your SD card. You will now have a set of folders 
+reflecting where game ROMs should be stored. Follow the instructions below for 
+configuring the `/BIOS/` folder.
 
 ## How to launch a core?
 
