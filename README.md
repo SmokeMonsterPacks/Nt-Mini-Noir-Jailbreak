@@ -555,9 +555,9 @@ can be centered so that most of the screen is visible.
 
 ## Controller mapping
 
-It is suggested to use a SNES controller or an NTT Data Pad.  If not,
-the difficulty switches and TV type and Supercharger load
-functionality is present in the core options menu.
+It is suggested to use a SNES controller or an SNES NTT Data Pad
+(NDK10).  If not, the difficulty switches and TV type and Supercharger
+load functionality is present in the core options menu.
 
 You can swap joystick ports virtually, because some games seem to use
 one or the other.  This is also accessible in the core options menu.
@@ -988,10 +988,10 @@ name.
 
 ## Button mapping
 
-A SNES Controller (or any compatible 12-button controller) or NTT Data
-Pad is ideal for this core.  The NTT Data Pad's numberpad is directly
-mapped the Coleco controller's numberpad.  Same for the Famicom
-Network Controller.
+A SNES Controller (or any compatible 12-button controller) or SNES NTT
+Data Pad (NDK10) is ideal for this core.  The NTT Data Pad's numberpad
+is directly mapped the Coleco controller's numberpad.  Same for the
+Famicom Network Controller (HVC-051).
 
 If using a standard SNES Controller, this is how the Coleco numberpad
 maps to the SNES buttons:
@@ -1065,8 +1065,9 @@ present in the `/BIOS/` directory and named `012.bin`.
 
 ## Controller support
 
-Only the NTT Data Pad or the Famicom Network Controller can fully map
-the numberpads of the Intellivision controller.
+Only the SNES NTT Data Pad (NDK10) ~~or the Famicom Network Controller
+(HVC-051)~~ can fully map the numberpads of the Intellivision
+controller.
 
 By default, the controller plugged into port two on the console will
 likely be seen as player one by the game, so the `Core Options` menu
@@ -1166,8 +1167,9 @@ move.
 
 ## Controls
 
-You can use the keypad of an NTT Data Pad or press "chords" on a SNES
-controller.  The "chording" works similar to the Colecovision:
+You can use the keypad of an SNES NTT Data Pad (NDK10) or press
+"chords" on a SNES controller.  The "chording" works similar to the
+Colecovision:
 
 ```
 Ltrig + up = 0
@@ -1218,8 +1220,8 @@ controller:
 4 - start
 ```
 
-If you have an NTT Data Pad, `1, 2, 3, 4` map to `1, 2, 3, 4` on the
-NTT Data Pad's numeric keypad.
+If you have an SNES NTT Data Pad (NDK10), `1, 2, 3, 4` map to `1, 2,
+3, 4` on the NTT Data Pad's numeric keypad.
 
 Using it:
 
@@ -1445,7 +1447,8 @@ You can hold down `A` which will disable the D-pad on the controller
 so you can easily press `1`, `3`, `9`, or `7` (the diagonals) without
 hitting one of the cardinal directions.
 
-If you have an NTT Data Pad, you can use its numberpad to hit `0`-`9`.
+If you have an SNES NTT Data Pad (NDK10), you can use its numberpad to
+hit `0`-`9`.
 
 This core uses a monochrome menu.  This is normal.
 
