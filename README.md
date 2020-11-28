@@ -817,7 +817,9 @@ directory on the SD card and try again, or turn the BIOS off in the
 `Core Options` menu.
 
 The core will load the file with the name `smsbios.bin` by default if
-one is found in the `/BIOS/` directory.
+one is found in the `/BIOS/` directory. Note that the Sega Master
+System has [many different BIOS
+versions](https://datomatic.no-intro.org/index.php?page=search&op=datset&s=26&sel_s=Sega+-+Master+System+-+Mark+III&stext=BIOS&where=1&searchme=Search&pageSel=0&element=Titles&sort=Title&order=Ascending).
 
 You may need to change to an `export` region under `System/Hardware`
 to get some games or BIOSes to work.
@@ -1202,6 +1204,17 @@ Y = fire button
 
 The Channel F BIOS is required to be present in the `/BIOS/` directory
 and it must be named `cfbios.bin` (expected CRC32: `2882C02D`).
+
+THE BIOS should be a concatenation of:
+- `[BIOS] Fairchild Channel F (USA) (SL31253).bin` (CRC32: `04694ED9`),
+- `[BIOS] Fairchild Channel F (USA) (SL31254).bin` (CRC32: `9C047BA3`)
+
+resulting in a merged file with a CRC32 checksum of `2882C02D`.
+
+For example, via Windows command-line:
+```
+copy /B sl31253.bin + sl31254.bin cfbios.bin
+```
 
 
 ## Button mapping
