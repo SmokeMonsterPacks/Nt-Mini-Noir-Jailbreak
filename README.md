@@ -992,8 +992,8 @@ name.
 
 A SNES Controller (or any compatible 12-button controller) or SNES NTT
 Data Pad (NDK10) is ideal for this core.  The NTT Data Pad's numberpad
-is directly mapped the Coleco controller's numberpad.  Same for the
-Famicom Network Controller (HVC-051).
+is directly mapped the Coleco controller's numberpad.  ~~Same for the
+Famicom Network Controller (HVC-051).~~
 
 If using a standard SNES Controller, this is how the Coleco numberpad
 maps to the SNES buttons:
