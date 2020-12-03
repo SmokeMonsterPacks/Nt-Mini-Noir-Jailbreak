@@ -1064,6 +1064,8 @@ CRC32: 683A4158).
 To use the Intellivoice, the 2K ROM for the speech chip has to be
 present in the `/BIOS/` directory and named `012.bin`.
 
+`012.bin` can be constructed by reversing the _bit_ order for each byte in `sp0256-012.bin` (CRC32: 0DE7579D) from the `intv_voice` entry in MAME.
+
 
 ## Controller support
 
@@ -1205,7 +1207,7 @@ Y = fire button
 The Channel F BIOS is required to be present in the `/BIOS/` directory
 and it must be named `cfbios.bin` (expected CRC32: `2882C02D`).
 
-THE BIOS should be a concatenation of:
+The BIOS should be a concatenation of:
 - `[BIOS] Fairchild Channel F (USA) (SL31253).bin` (CRC32: `04694ED9`),
 - `[BIOS] Fairchild Channel F (USA) (SL31254).bin` (CRC32: `9C047BA3`)
 
@@ -1380,6 +1382,8 @@ the voice, you need three files:
 sp128_03.bin  - Speech ROM resident in the speech module (16K bytes) CRC32: 66041B03
 sp128_04.bin  - Speech ROM in Sid the Spellbinder (16K bytes)        CRC32: 6780C7D3
 ```
+
+`019.bin` can be constructed by reversing the _bit_ order for each byte in `sp0256b-019.bin` (CRC32: 4BB43724) from the `o2_voice` entry in MAME.
 
 Place them in the `/BIOS/` directory and name them as indicated above.
 
