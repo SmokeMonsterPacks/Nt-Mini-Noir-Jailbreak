@@ -126,6 +126,9 @@ selected.  This includes many pirate conversions of FDS games to
 cartridge (except for *Tobadaise Daisuken*, which had its FDS audio
 data removed.)
 
+## Family BASIC Keyboard
+
+Enable Passthrough Mode to use the keyboard.
 
 ## other features
 
