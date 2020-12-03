@@ -1496,8 +1496,8 @@ adapter.
 This core needs a pair BIOS ROMs. They must be named:
 
 ```
-uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2`
-uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE`
+uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2` (commonly named "uvres 1n.d67" in the vidbrain entry in MAME)
+uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE` (commonly named "resn2.e5" in the vidbrain entry in MAME)
 ```
 
 Place them in the `/BIOS/` directory.
