@@ -1441,6 +1441,17 @@ determine how to start the game.
 This system requires a BIOS, and it must be named `rca2bios.bin`
 (CRC32: `A494B339`) and placed in the `/BIOS/` directory.
 
+The BIOS should be a concatenation of:
+- `84932.ic11` (CRC32: `283B7E65`),
+- `84933.ic12` (CRC32: `A396B77C`),
+- `85456.ic13` (CRC32: `D25CF97F`),
+- `85457.ic14` (CRC32: `74AA724F`)
+from the `studio2` entry in MAME, resulting in a merged file with a CRC32 checksum of `A494B339`.
+
+For example, via Windows command-line:
+```
+copy /B 84932.ic11 + 84933.ic12 + 85456.ic13 + 85457.ic14 rca2bios.bin
+```
 
 ## Controller mapping
 
