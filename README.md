@@ -729,6 +729,11 @@ Other changes:
 *Dig Dug* needs to have the first 256 bytes zeroed out (or set to all
 `0xFF`'s) so that the extra RAM can be detected properly.
 
+## Problem solving
+
+**Kool-Aid Man**: uses the left (Player 1) difficulty switch to pause the game (default/disabled position `A` is paused, position `B` is un-paused). Enable this switch in the Core Options menu, or press the right-trigger button on controller 1 to play this game. The right (Player 2) difficulty switch sets the difficulty (default/disabled position `A` is fast/hard, position `B` is normal); this can toggled in the Core Options menu or by pressing the left/right triggers for hard/easy on controller 2. See [game manual](https://archive.org/details/Atari2600Manuals_201812/Kool-Aid%20Man%20%28USA%29) [text](https://atariage.com/manual_html_page.php?SoftwareLabelID=266) for more details.
+
+Some other games that use switches during gameplay: [Ghostbusters](https://archive.org/details/Atari2600Manuals_201812/Ghostbusters%20%28USA%29), [Phaser Patrol](https://archive.org/details/Atari2600Manuals_201812/Phaser%20Patrol%20%28USA%29), [Secret Quest](https://archive.org/details/Atari2600Manuals_201812/Secret%20Quest%20%28USA%29), [Space Shuttle](https://archive.org/details/Atari2600Manuals_201812/Space%20Shuttle%20-%20A%20Journey%20Into%20Space%20%28USA%29), [StarMaster](https://archive.org/details/Atari2600Manuals_201812/StarMaster%20%28USA%29), [Tomcat](https://archive.org/details/Atari2600Manuals_201812/Tomcat%20-%20The%20F-14%20Fighter%20Simulator%20%28USA%29)
 
 -----------------------------
 
