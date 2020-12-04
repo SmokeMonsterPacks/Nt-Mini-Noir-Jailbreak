@@ -126,6 +126,9 @@ selected.  This includes many pirate conversions of FDS games to
 cartridge (except for *Tobadaise Daisuken*, which had its FDS audio
 data removed.)
 
+## Family BASIC Keyboard
+
+Enable Passthrough Mode to use the keyboard.
 
 ## other features
 
@@ -1353,9 +1356,9 @@ simulates having no cartridge in the system.
 
 ----------------------------
 
-# Odyssey^2 Core Release Notes
+# Odyssey<sup>2</sup> Core Release Notes
 
-The Odyssey^2 core supports keyboards via PS2 and an adapter that
+The Odyssey<sup>2</sup> core supports keyboards via PS2 and an adapter that
 plugs into the Famicom expansion port.  If you wish to make an
 adapter, you can find the schematic in the `/SYSTEM/` directory.
 
@@ -1387,7 +1390,7 @@ sp128_04.bin  - Speech ROM in Sid the Spellbinder (16K bytes)        CRC32: 6780
 
 Place them in the `/BIOS/` directory and name them as indicated above.
 
-The controller maps the directionals directly to the Odyssey^2
+The controller maps the directionals directly to the Odyssey<sup>2</sup>
 directions as you'd expect.  On a SNES controller the mapping is as
 follows :
 
@@ -1408,9 +1411,9 @@ games.
 Keyboard mapping:
 
 If you make or buy the PS2 adapter and use a PS2 keyboard you can use
-it directly to simulate the Odyssey^2 keyboard.
+it directly to simulate the Odyssey<sup>2</sup> keyboard.
 
-All Odyssey^2 keys map to their corresponding keys on a PC keyboard
+All Odyssey<sup>2</sup> keys map to their corresponding keys on a PC keyboard
 except "clear" which is mapped to backspace.
 
 Most games can be played without the keyboard, due to the mapping of
@@ -1441,6 +1444,18 @@ determine how to start the game.
 This system requires a BIOS, and it must be named `rca2bios.bin`
 (CRC32: `A494B339`) and placed in the `/BIOS/` directory.
 
+The BIOS should be a concatenation of:
+- `84932.ic11` (CRC32: `283B7E65`),
+- `84933.ic12` (CRC32: `A396B77C`),
+- `85456.ic13` (CRC32: `D25CF97F`),
+- `85457.ic14` (CRC32: `74AA724F`)
+
+from the `studio2` entry in MAME, resulting in a merged file with a CRC32 checksum of `A494B339`.
+
+For example, via Windows command-line:
+```
+copy /B 84932.ic11 + 84933.ic12 + 85456.ic13 + 85457.ic14 rca2bios.bin
+```
 
 ## Controller mapping
 
@@ -1490,14 +1505,14 @@ drum samples really slowly so it doesn't make much sound.
 
 # Videobrain Core Release Notes
 
-The Videobrain supports keyboards via a PS2 keyboard and the Odyssey^2
+The Videobrain supports keyboards via a PS2 keyboard and the Odyssey<sup>2</sup>
 adapter.
 
 This core needs a pair BIOS ROMs. They must be named:
 
 ```
-uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2`
-uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE`
+uvres1.bin    - The first BIOS file (2K bytes)  CRC32: `065FE7C2` (commonly named "uvres 1n.d67" in the vidbrain entry in MAME)
+uvres2.bin    - The second BIOS file (2K bytes) CRC32: `1D85D7BE` (commonly named "resn2.e5" in the vidbrain entry in MAME)
 ```
 
 Place them in the `/BIOS/` directory.
