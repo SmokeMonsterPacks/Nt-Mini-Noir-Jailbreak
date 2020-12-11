@@ -195,8 +195,8 @@ headers.
 
 *Vs. Tetris* has only 24KiB of PRG-ROM but the jailbreak will only
 load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of
-00s inserted between the header and start of the PRG-ROM to get the
-game to work.
+0x00 bytes (or 0xFF bytes) inserted between the header and start of the PRG-ROM to get the
+game to work. *Vs. Gumshoe* may also need padding in addition to ROM reordering (see NewRisingSun's [fixes](https://forums.nesdev.com/viewtopic.php?f=3&t=17213&start=45#p220718)).
 
 Vs. System games obtain their settings from a bank of eight dip
 switches, these will be found as Dips 1-8 under Core Options - Dip
@@ -216,6 +216,7 @@ would and cannot change their palettes.  The result is that you will
 need to use Component, RGB or HDMI video to play these games with the
 proper colors.
 
+NewRisingSun has [compiled](https://forums.nesdev.com/viewtopic.php?f=3&t=17213&start=45#p220718) a helpful set of NES2.0 headers for many Vs. System ROMs and a script that can construct these NES ROMs from MAMEs PRG/CHR ROM dumps.
 
 ## problem solving
 
