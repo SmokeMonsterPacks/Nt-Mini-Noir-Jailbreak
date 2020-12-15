@@ -121,10 +121,10 @@ v6.5 (Dec. 15, 2020)
 - Fixed palette issues affecting multiple games (*Pokemon Pinball*,
   *Mega Man Xtreme*, *Pooh & Tigger's Hunny Safari*, *Harvest Moon 3*)
 - Fixed wave channel audio bug
-- Fixed Tokyo Disney crash when playing 5th level
-- Fixed crash in Barbie Magic Genie Adventure when using powers
-- Fixed Razor Freestyle Scooter and Lufia failing to load
-- Fixed Lego Racers cloud color bug
+- Fixed *Tokyo Disney* crash when playing 5th level
+- Fixed crash in *Barbie Magic Genie Adventure* when using powers
+- Fixed *Razor Freestyle Scooter* and *Lufia* failing to load
+- Fixed *Lego Racers cloud* color bug
  
 **Colecovision**
 - Added Famicom Network controller functionality
@@ -141,8 +141,8 @@ v6.5 (Dec. 15, 2020)
   to simulate pressing console reset button
 
 **Intellivision**
-- Added Famicom Network controller functionality.  0, A, B are the
-  three buttons. 0 on the keypad is remapped to .
+- Added Famicom Network controller functionality.  `0`, `A`, `B` are
+  the three buttons. `0` on the keypad is remapped to .
 - Added Player 1/2 swap to cores menu
 
 **SPC**
