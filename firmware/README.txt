@@ -1,6 +1,7 @@
 Jailbreak
 ----------------
 
+-Famicom Disk System support added
 -New NES core 100% supports 2.0 mappers
 -Genesis core added
 -Intellivision core added
@@ -28,6 +29,67 @@ If you wish to install JUST the updates and not reformat your card, perform the 
 * Load your games into the new directories.
 * On powerup, the Nt Mini will update and will be ready to go!
 
+Latest Update
+-------------
+(previous updates will be moved to the very bottom of the document)
+
+(general)
+* Controller test added
+* Fixed L/R reverse on RCA jacks
+* Fixed filter cutoff display bug
+
+(NES)
+* Added full FDS support with manual, semiautomatic and automatic side switching (see NES section below for operation notes)
+* Added Super Russian Roulette mapper (#413)
+* Added support for Haunted Halloween '85 and '86
+* Added Vs. palette support for composite and s-video
+* Reduced default expansion audio level for better balance with internal audio.
+* Passthrough mode can now be cancelled by tapping reset twice.
+* Fixed CopyNES mini save WRAM dumping, save games on cartridges can now be preserved
+* Fixed Vice Project Doom / Gun-Dec starting in debug mode with second controller plugged in
+* Fixed VRC6 register swap function.  Use both VRC6 and VRC6 Swap for Madara and Esper Dream 2 and just VRC6 for Akumajou Densetsu
+* Fixed FDS Audio channel imbalance when panning sliders are centered
+* Fixed small FDS channel bug
+* Fixed popping square wave audio in Egger Land - Souzou e no Tabidachi and Eggerland - Meikyuu no Fukkatsu
+* Fixed Vs. Goonies graphic issue
+* Fixed Game of the Goose graphic issues (#512)
+* Fixed DPCM corruption bug for PAL and Dendy Modes
+* Fixed MMC5 Castlevania III PAL cartridge functionality
+* Fixed Dendy mode for EverDrives and Cartridges
+* Fixed Dendy mode NMI flag
+
+(GB/GBC)
+* Fixed palette issues affecting multiple games (Pokemon Pinball, Mega Man Xtreme, Pooh & Tigger's Hunny Safari, Harvest Moon 3)
+* Fixed wave channel audio bug
+* Fixed Tokyo Disney crash when playing 5th level
+* Fixed crash in Barbie Magic Genie Adventure when using powers
+* Fixed Razor Freestyle Scooter and Lufia failing to load
+* Fixed Lego Racers cloud color bug
+ 
+(Colecovision)
+* Added Famicom Network controller functionality
+* Fixed Penguin Adventure
+
+(Genesis)
+* Added Famicom Network controller functionality
+* Fixed Audio sliders bug
+
+(SMS)
+* Added Famicom Network controller functionality
+* Fixed BIOSes loading built in games
+* Use "end" button on Famicom Network or Super Famicom NTT Data Keypad to simulate pressing console reset button
+
+(Intellivision)
+* Added Famicom Network controller functionality.  0, A, B are the three buttons. 0 on the keypad is remapped to .
+* Added Player 1/2 swap to cores menu
+
+(SPC)
+* Fixed audio static bug
+
+*changelog*
+-----------
+
+v6.2 (initial release)
 
 Cores Menu
 ----------
@@ -52,13 +114,6 @@ The key setup for the core menus are:
 
 * SELECT: exit the menu. You will be asked to confirm.  If you confirm, it returns to the core select   menu.  If you do not wish to exit, it returns to the currently running game.
 
-
-*changelog*
------------
-
-v6.1 (initial release)
-
-
 NES/Famicom Core Release Notes
 ------------------------------
 
@@ -75,12 +130,78 @@ Save game RAM is fully supported for many mappers, and has three modes:
 
 This allows you to control how save RAM saving works. Save filenames should be usable out to 256 characters or so now, which should encompass just about anything.
 
-EEPROM and Flash saving are not supported.  EEPROM saving is used by some Mapper 16, Mapper 157 and all Mapper 159 games (Bandai releases and Datach Joint ROM System).  Flash saving is used by Mappers 30 and 111 (homebrew releases).
+EEPROM and Flash saving are not supported.  EEPROM saving is used by some Mapper 16, Mapper 157 and all Mapper 159 games (Bandai releases and Datach Joint ROM System).  Flash saving is used by Mappers 30 and 111 (Homebrew releases).
 
 *Expansion audio*
 ----------------
 
 Expansion cartridge audio is supported.  Unlike cart mode, however, the act of loading a ROM will force the proper expansion chip to be selected.  This includes many pirate conversions of FDS games to cartridge (except for Tobadaise Daisuken, which had its FDS audio data removed.)  
+
+*FDS*
+-----
+Full FDS disk drive and RAM adapter emulation has been added.  This allows FDS games to be played that consist of from 1 to 4 disk sides.   The FDS images must be a multiple of 65500 bytes, and cannot contain headers.  
+
+Valid file sizes in bytes:
+
+ 65500 bytes - 1 disk side
+131000 bytes - 2 disk sides (these first two are the most common)
+196500 bytes - 3 disk sides (very rare)
+262000 bytes - 4 disk sides (somewhat rare)
+
+To use the FDS functionality, an FDS BIOS needs to placed into the /BIOS/
+directory.  Any of the three BIOS dumps can be used: R0, R1, or the Twin
+Famicom version.  It must be named fds.bin
+
+Several methods to load disks and change sides are provided in a new menu
+titled "FDS" that appears on the cores menu only when an FDS game is loaded.
+
+By default, "automatic" mode is selected.  This mode will automatically load the first side of the FDS image and run it without user intervention.  It will also detect the side and disk the game is attempting to load, and will automatically select the side for you.  The loading prompts are also automatically passed so usually no intervention is required to play the games.
+
+There are a few exceptions to this, however, and a few games need to be loaded manually.  These are listed later.
+
+When an FDS game is loaded, a new FDS menu appears on the main menu.  This menu allows full control of the FDS "drive".
+
+In the menu, the auto/manual selection can be made, and a disk ejected, and/or a new side can be selected. 
+
+Saving:  When the file menu is opened,  the FDS disk data is saved to a .sav
+file like with cartridge games, however the data is no longer in .fds format;
+it is in the expanded disk format with gaps and CRCs.  This is due to the fact that .fds files must be expanded to be loaded.  When loading a game with an existing .sav file, the .sav file will be loaded and the contents of the .fds will NOT be used, except to determine the number of disk sides the game
+contains.
+
+This means if you wish to reload a game from the .fds to play it, its .sav file must be deleted, or the .fds renamed.  This way the original file is not modified.
+
+A .sav file will NOT be created unless the contents of the disk were modified. This means games that do not save to disk will not create .sav files.
+
+There are three ways to handle disk changing:
+
+Manual mode:  You must manually select disks and sides in the menu.
+You do not need to eject before changing disks or sides;  it wil perform a
+1/4th second eject for you.
+
+Semiautomatic mode functionality:  This is the default mode.  Pressing select
+will eject the disk as long as select is down, and for about 1/2 second after
+it is released, and then auto-select the proper disk and side.
+
+Some games such as Doki Doki Panic have an unusually long wait
+to check for a disk being ejected so this accommodates that.   Note that since select ejects the disk, it is not a good idea to do this while a game is loading since it will throw an error 01.  Usually most games can recover from this though, and will attempt to load again.  The same caveats with automatic mode follow over to semiautomatic mode with regards to a few games not being able to autodetect the side/disk.  No known games or software have an issue with the disk being ejected once they have loaded, and only check it when they wish to load or are actively loading.
+
+Automatic mode functionality:  The automatic mode works fine for most games
+except those outlined below.  It has a few extra features that are activated
+by use of the select button on player 1.  Some games, such as Zelda, will skip the title screen and directly load the game.  To see the title screen, the select button can be held which will stop the automatic switching from happening until it is released.  
+
+On a few games, it can take a few seconds for the automatic loading process
+to start.  This is normal because every game has to read the state of the disk, and each one does it differently.
+
+A few games that use custom loading routines can produce "ERR 01" errors  If
+this happens simply hold the select button down during the loading process.
+If a game seems unresponsive or won't autoload the disk, try holding down select for a second or so and/or tapping it to see if that unsticks it.  
+
+These games cannot be used with auto mode because they have custom disk routines, or they do not specify the proper side when loading:
+
+Doremikko - does not specify proper side to load
+Koneko Monogatari - uses custom disk routines and not the BIOS
+Some unlicensed games don't specify the side to load
+Bishoujo Shashinkan - Moving School - reboots unless run in manual mode
 
 *other features*
 ----------------
@@ -454,8 +575,7 @@ Atari 2600 games determine the number of scanlines they will use.  In HDMI mode,
 Controller mapping:
 -------------------
 
-It is suggested to use a SNES controller or an NTT Data Pad.  If not, the
-difficulty switches and TV type and Supercharger load functionality is present in the core options menu.
+It is suggested to use a SNES controller or a Super Famicom NTT Data Keypad.  If not, the difficulty switches and TV type and Supercharger load functionality is present in the core options menu.
 
 You can swap joystick ports virtually, because some games seem to use one or the other.  This is also accessible in the core options menu.
 
@@ -706,7 +826,7 @@ etc. ROMs.
 
 Some ROMs have a useless 512 byte header at the beginning that is mostly 0's. If this is found, it is ignored.
 
-Some versions of the system have a "game reset" button.  You may activate this feature by pressing select and X at the same time on a SNES controller.  That is a safeguard to prevent it accidentally being pressed and resetting
+Some versions of the system have a "game reset" button.  You may activate this feature by pressing select and X at the same time on a SNES controller or by pressing the "End" button on Famicom Network or Super Famicom NTT Data Keypad.  That is a safeguard to prevent it accidentally being pressed and resetting
 the game.
 
 Pause is mapped to the start button like you'd expect.
@@ -811,7 +931,7 @@ Loading a BIOS is required for this Core to load ROMs.  Load a BIOS under the co
 *Button mapping*
 ----------------
 
-A SNES Controller (or any compatible 12-button controller) or NTT Data Pad is ideal for this core.  The NTT Data Pad's numberpad is directly mapped the Coleco controller's numberpad.  Same for the Famicom Network Controller.
+A SNES Controller (or any compatible 12-button controller) is necessary to use this Core.  The Famicom Network Controller or Super Famicom NTT Data Keypad are the ideal controllers for this core.  The Super Famicom NTT Data Keypad's numberpad is directly mapped the Coleco controller's numberpad.  Same for the Famicom Network Controller.
 
 If using a standard SNES Controller, this is how the Coleco numberpad maps to the SNES buttons :
 
@@ -865,7 +985,7 @@ To use the Intellivoice, the 2K ROM for the speech chip has to be present in the
 *Controller support*
 --------------------
 
-Only the NTT Data Pad or the Famicom Network Controller can fully map the numberpads of the Intellivision controller.
+Only the Super Famicom NTT Data Keypad or the Famicom Network Controller can fully map the numberpads of the Intellivision controller.
 
 By default, the controller plugged into port two on the console will likely be seen as player one by the game, so the Core Options menu allows you to swap controllers.  It also allows you to enable ECS, Intellivoice and Intellicart mapping.  
 
@@ -923,7 +1043,7 @@ Some homebrews games rely on the numberpad rather than the joystick to move.
 Controls:
 ---------
 
-You can use the keypad of an NTT Data Pad  or press "chords" on a SNES controller.  The "chording" works similar to the Colecovision:
+You can use the keypad of a Super Famicom NTT Data Keypad or press "chords" on a SNES controller.  The "chording" works similar to the Colecovision:
 
 Ltrig + up = 0
 Ltrig + right = 1
@@ -965,7 +1085,7 @@ On this core, the mapping of these four buttons is as such to a SNES controller:
 3 - select
 4 - start
 
-If you have an NTT Data Pad, 1, 2, 3, 4 map to 1, 2, 3, 4 on the NTT Data Pad's numeric keypad.  
+If you have a Super Famicom NTT Data Keypad, 1, 2, 3, 4 map to 1, 2, 3, 4 on the Super Famicom NTT Data Keypad's numeric keypad.  
 
 Using it:
 
@@ -1136,7 +1256,7 @@ down/left, and left respectively.
 You can hold down A which will disable the D pad on the controller so you can easily press 1, 3, 9, or 7 (the diagonals) without hitting one of the cardinal
 directions.
 
-If you have an NTT Data Pad, you can use its numberpad to hit 0-9.
+If you have a Super Famicom NTT Data Keypad, you can use its numberpad to hit 0-9.
 
 This core uses a monochrome menu.  This is normal.
 
