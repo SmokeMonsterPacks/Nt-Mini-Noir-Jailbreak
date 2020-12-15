@@ -2,6 +2,7 @@
 
 Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
+- Famicom Disk System support added
 - New NES core 100% supports 2.0 mappers
 - Genesis core added
 - Intellivision core added
@@ -128,7 +129,7 @@ v6.5 (Dec. 15, 2020)
  
 **Colecovision**
 - Added Famicom Network controller functionality
-- Fixed Penguin Adventure
+- Fixed *Penguin Adventure*
 
 **Genesis**
 - Added Famicom Network controller functionality
@@ -1660,8 +1661,8 @@ extension.  `.MD1` selects the single 32K selectable bank mode, and
 
 All games greater than 32K need the `.MD2` extension except for the
 following two games:
-- Puppet Knight
-- Suleiman's Treasure
+- *Puppet Knight*
+- *Suleiman's Treasure*
 
 These need the `.MD1` extension.  32K games do not need a special
 extension.
