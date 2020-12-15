@@ -610,6 +610,112 @@ selecting `NES`, then going to the `/COPYNES/` directory and running
 the ROM.
 
 
+## FDS
+
+Full FDS disk drive and RAM adapter emulation has been added.  This
+allows FDS games to be played that consist of from 1 to 4 disk sides.
+The FDS images must be a multiple of 65500 bytes, and cannot contain
+headers.
+
+Valid file sizes in bytes:
+```
+ 65500 bytes - 1 disk side
+131000 bytes - 2 disk sides (these first two are the most common)
+196500 bytes - 3 disk sides (very rare)
+262000 bytes - 4 disk sides (somewhat rare)
+```
+
+To use the FDS functionality, an FDS BIOS needs to placed into the
+`/BIOS/` directory.  Any of the three BIOS dumps can be used: R0, R1,
+or the Twin Famicom version.  It must be named `fds.bin`
+
+Several methods to load disks and change sides are provided in a new
+menu titled "FDS" that appears on the cores menu only when an FDS game
+is loaded.
+
+By default, "automatic" mode is selected.  This mode will
+automatically load the first side of the FDS image and run it without
+user intervention.  It will also detect the side and disk the game is
+attempting to load, and will automatically select the side for you.
+The loading prompts are also automatically passed so usually no
+intervention is required to play the games.
+
+There are a few exceptions to this, however, and a few games need to
+be loaded manually.  These are listed later.
+
+When an FDS game is loaded, a new FDS menu appears on the main menu.
+This menu allows full control of the FDS "drive".
+
+In the menu, the auto/manual selection can be made, and a disk
+ejected, and/or a new side can be selected.
+
+Saving: When the file menu is opened, the FDS disk data is saved to a
+`.sav` file like with cartridge games, however the data is no longer
+in .fds format; it is in the expanded disk format with gaps and CRCs.
+This is due to the fact that .fds files must be expanded to be loaded.
+When loading a game with an existing .sav file, the .sav file will be
+loaded and the contents of the .fds will NOT be used, except to
+determine the number of disk sides the game contains.
+
+This means if you wish to reload a game from the .fds to play it, its
+.sav file must be deleted, or the .fds renamed.  This way the original
+file is not modified.
+
+A .sav file will NOT be created unless the contents of the disk were
+modified. This means games that do not save to disk will not create
+.sav files.
+
+There are three ways to handle disk changing:
+
+Manual mode: You must manually select disks and sides in the menu.
+You do not need to eject before changing disks or sides; it wil
+perform a 1/4th second eject for you.
+
+Semiautomatic mode functionality: This is the default mode.  Pressing
+select will eject the disk as long as select is down, and for about
+1/2 second after it is released, and then auto-select the proper disk
+and side.
+
+Some games such as *Doki Doki Panic* have an unusually long wait to
+check for a disk being ejected so this accommodates that.  Note that
+since select ejects the disk, it is not a good idea to do this while a
+game is loading since it will throw an error 01.  Usually most games
+can recover from this though, and will attempt to load again.  The
+same caveats with automatic mode follow over to semiautomatic mode
+with regards to a few games not being able to autodetect the
+side/disk.  No known games or software have an issue with the disk
+being ejected once they have loaded, and only check it when they wish
+to load or are actively loading.
+
+Automatic mode functionality: The automatic mode works fine for most
+games except those outlined below.  It has a few extra features that
+are activated by use of the select button on player 1.  Some games,
+such as Zelda, will skip the title screen and directly load the game.
+To see the title screen, the select button can be held which will stop
+the automatic switching from happening until it is released.
+
+On a few games, it can take a few seconds for the automatic loading
+process to start.  This is normal because every game has to read the
+state of the disk, and each one does it differently.
+
+A few games that use custom loading routines can produce `ERR 01`
+errors If this happens simply hold the select button down during the
+loading process.
+
+If a game seems unresponsive or won't autoload the disk, try holding
+down select for a second or so and/or tapping it to see if that
+unsticks it.
+
+These games cannot be used with auto mode because they have custom
+disk routines, or they do not specify the proper side when loading:
+
+- Doremikko - does not specify proper side to load
+- Koneko Monogatari - uses custom disk routines and not the BIOS
+- Some unlicensed games don't specify the side to load
+- Bishoujo Shashinkan - Moving School - reboots unless run in manual
+  mode
+
+
 -------------------------------
 
 # Atari 2600 Core Release Notes
