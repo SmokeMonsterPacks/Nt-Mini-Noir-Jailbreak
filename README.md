@@ -23,7 +23,7 @@ supported). In Windows, you must use a tool for cards larger than
 [fat32format](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm).
 
 Copy
-[ntmv2_firmware_verJB6.2.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.2.bin)
+[ntmv2_firmware_verJB6.5.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.5.bin)
 into the root directory of your SD card.  Be sure that there is only
 one firmware file there.  Insert the card into your Nt Mini Noir and
 power on. The firmware will be flashed to the console. This process
@@ -82,6 +82,72 @@ The key setup for the core menus are:
 
 
 ## changelog
+
+v6.5 (Dec. 15, 2020)
+
+**General**
+- Controller test added
+- Fixed L/R reverse on RCA jacks
+- Fixed filter cutoff display bug
+
+**NES**
+- Added full FDS support with manual, semiautomatic and automatic side
+  switching (see NES section below for operation notes)
+- Added *Super Russian Roulette mapper* (#413)
+- Added support for *Haunted Halloween '85* and *Haunted Halloween
+  '86*
+- Added Vs. palette support for composite and s-video
+- Reduced default expansion audio level for better balance with
+  internal audio.
+- Passthrough mode can now be cancelled by tapping reset twice.
+- Fixed CopyNES mini save WRAM dumping, save games on cartridges can
+  now be preserved
+- Fixed Vice Project Doom / Gun-Dec starting in debug mode with second
+  controller plugged in
+- Fixed VRC6 register swap function.  Use both VRC6 and VRC6 Swap for
+  *Madara* and *Esper Dream 2* and just VRC6 for *Akumajou Densetsu*
+- Fixed FDS Audio channel imbalance when panning sliders are centered
+- Fixed small FDS channel bug
+- Fixed popping square wave audio in *Egger Land - Souzou e no
+  Tabidachi* and *Eggerland - Meikyuu no Fukkatsu*
+- Fixed *Vs. Goonies* graphic issue
+- Fixed *Game of the Goose* graphic issues (#512)
+- Fixed DPCM corruption bug for PAL and Dendy Modes
+- Fixed MMC5 *Castlevania III* PAL cartridge functionality
+- Fixed Dendy mode for EverDrives and Cartridges
+- Fixed Dendy mode NMI flag
+
+**GB/GBC**
+- Fixed palette issues affecting multiple games (*Pokemon Pinball*,
+  *Mega Man Xtreme*, *Pooh & Tigger's Hunny Safari*, *Harvest Moon 3*)
+- Fixed wave channel audio bug
+- Fixed Tokyo Disney crash when playing 5th level
+- Fixed crash in Barbie Magic Genie Adventure when using powers
+- Fixed Razor Freestyle Scooter and Lufia failing to load
+- Fixed Lego Racers cloud color bug
+ 
+**Colecovision**
+- Added Famicom Network controller functionality
+- Fixed Penguin Adventure
+
+**Genesis**
+- Added Famicom Network controller functionality
+- Fixed Audio sliders bug
+
+**SMS**
+- Added Famicom Network controller functionality
+- Fixed BIOSes loading built in games
+- Use "end" button on Famicom Network or Super Famicom NTT Data Keypad
+  to simulate pressing console reset button
+
+**Intellivision**
+- Added Famicom Network controller functionality.  0, A, B are the
+  three buttons. 0 on the keypad is remapped to .
+- Added Player 1/2 swap to cores menu
+
+**SPC**
+- Fixed audio static bug
+
 
 v6.1 (initial release)
 
