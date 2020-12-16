@@ -1238,15 +1238,19 @@ The Intellivision core supports games for the base system, the
 Intellivoice speech attachment and to some extent, the Enhanced
 Computer System addon (ECS).
 
-You may load the Executive BIOS file for the Intellivision by name
-(`intvexec1.bin` expected CRC32: A85FC6DD).  You will also need the
-GROM binary `grom.bin` placed in the `/BIOS/` directory (expected
-CRC32: 683A4158).
+You will need the GROM binary `grom.bin` placed in the `/BIOS/` directory (expected CRC32: `683A4158`).
+
+You will need an Executive BIOS file (in INTV2 format) for Intellivision (expected default name: `intvexec1.bin`).
+This file can be selected by name in the core menu.
+The recommended BIOS to convert and use is `Executive ROM, The (1978) (Mattel).int`, aka `intv/exec.bin` from MAME, with CRC32: `CBCE86F7`, 8192 bytes.
+When converted to the INTV2 format to be used with the Nt Mini Noir, it is 8208 bytes with CRC32: `EEB54C63`. This converted file should be placed in the `/BIOS/` directory with the expected name `intvexec1.bin`. See further below for information on the INTV2 format.
+
+Note: You may also use the *Intellivision II* Executive BIOS (INTV2 format expected CRC32: `A85FC6DD`, 8728 bytes), but it may be incompatible with some games (e.g. *Carnival*, *Donkey Kong*, *Mouse Trap*, *Venture*).
 
 To use the Intellivoice, the 2K ROM for the speech chip has to be
 present in the `/BIOS/` directory and named `012.bin`.
 
-`012.bin` can be constructed by reversing the _bit_ order for each byte in `sp0256-012.bin` (CRC32: 0DE7579D) from the `intv_voice` entry in MAME.
+`012.bin` can be constructed by reversing the _bit_ order for each byte in `sp0256-012.bin` (CRC32: `0DE7579D`) from the `intv_voice` entry in MAME.
 
 
 ## Controller support
@@ -1308,6 +1312,7 @@ bankswitched games and/or homebrews as they arise.
 The BIOS you wish to use also needs to be in this format, since the
 different BIOSes (i.e. intv2) load data in different places.
 
+A utility to convert files to the INTV2 format can be found [here](https://github.com/dot-bob/int2intv).
 
 ----------------------------------
 
