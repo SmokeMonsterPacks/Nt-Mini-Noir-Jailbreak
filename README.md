@@ -1245,7 +1245,13 @@ This file can be selected by name in the core menu.
 The recommended BIOS to convert and use is `Executive ROM, The (1978) (Mattel).int`, aka `intv/exec.bin` from MAME, with CRC32: `CBCE86F7`, 8192 bytes.
 When converted to the INTV2 format to be used with the Nt Mini Noir, it is 8208 bytes with CRC32: `EEB54C63`. This converted file should be placed in the `/BIOS/` directory with the expected name `intvexec1.bin`. See further below for information on the INTV2 format.
 
-Note: You may also use the *Intellivision II* Executive BIOS (INTV2 format expected CRC32: `A85FC6DD`, 8728 bytes), but it may be incompatible with some games (e.g. *Carnival*, *Donkey Kong*, *Mouse Trap*, *Venture*).
+Note: You may also use the *Intellivision II* Executive BIOS (INTV2 format expected CRC32: `A85FC6DD`, 8728 bytes), but it may be incompatible with some games (e.g. *Carnival*, *Donkey Kong*, *Mouse Trap*, *Venture*). This particular rom can be found in [MAME](https://github.com/mamedev/mame/blob/master/src/mame/drivers/intv.cpp) (`intv/intv2/ro-3-9506-010.ic6`, 8704 bytes, CRC32: `DD7E1237`). The first 512 bytes are mapped to address 0x400, the remaining 8192 bytes are mapped to address 0x1000. To convert this file to INTV2 format, each of the two chunks need an eight-byte INTV2 header, with an INTV2 file trailer:
+`00 04 00 00 00 01 00 00`
+*(first 512 bytes of rom)*
+`00 10 00 00 00 10 00 00`
+*(remaining 8K bytes of rom)*
+`00 00 00 00 00 00 00 00`
+
 
 To use the Intellivoice, the 2K ROM for the speech chip has to be
 present in the `/BIOS/` directory and named `012.bin`.
