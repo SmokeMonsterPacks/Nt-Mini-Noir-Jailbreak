@@ -10,6 +10,10 @@ Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 - SPC player added
 - Mandelbrot zoomer added
 
+(custom jailbreak firmware for the 2017 original Analogue Nt Mini v1
+are available [at that other
+repository](https://github.com/tjanas/Nt-Mini-Legacy-Jailbreak))
+
 
 -------------------
 
