@@ -902,6 +902,9 @@ These need the `.CV` extension:
 - Magicard
 - Video Life
 
+This needs the `.UA` extension:
+- Pleiades
+
 Other changes:
 
 *Dig Dug* needs to have the first 256 bytes zeroed out (or set to all
