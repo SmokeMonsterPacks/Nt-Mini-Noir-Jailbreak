@@ -88,6 +88,62 @@ The key setup for the core menus are:
 
 ## changelog
 
+v6.6 (Feb. 22, 2020)
+
+(general)
+* All cores should have their video window properly centered on the X and Y axis when the sliders for position are in the center.  The exception is for cores with an extremely low original resolution, such as Game King. 
+* All scaling defaults have been updated to more useful values.  
+* Added SPD HDMI Packet to identify console as "Nt Mini Noir"
+
+(NES)
+* Added cheat codes menu when running ROMs via jailbreak
+* Added ability to decrement letters on cheat code and Copynes mini by pressing select
+* Replaced Firebrandx palette with the latest one ("Smooth_-_Balanced_Greys_FBX")
+* Fixed Vs. Hogan's Alley and Duck Hunt "gun stolen" alarm sound going off all the time or in the menu
+* Fixed FDS RAM Adapter, Super Mario Bros. and many other games exhibiting graphics issue when cartridges were being used
+* Fixed Vs. Mighty Bomb Jack reversed controls
+* Fixed Trojan audio channels cutting off early
+* Fixed playing a Vs. game then an FDS game caused a bad palette
+* Fixed Vs. coin insertion not working when using a SNES or NTT Data Keypad
+* Fixed Sunsoft 5B audio implementation
+* Fixed Battletoads and Double Dragon player 2 selection box moving on its own
+* Fixed games (i.e. Kickmaster) with mappers that used A12 for scanline counts had jittering graphics in 16 sprite mode
+* Fixed FDS manual disk ejection not working correctly
+* Fixed Copynes mini not properly exiting high resolution mode from the file menu
+* Fixed Maniac Mansion's intermitent flickering top line
+* Fixed Eggerland - Meikyuu no Fukkatsu and Egger Land - Souzou e no Tabidachi's popping square channel
+
+(GBC)
+* Fixed Barbie Pet Rescue's blank screen before the title
+* Fixed Pokemon Pinball's corrupt frames when screen was blanked
+* Fixed Bear in the Big Blue House hanging on the title screen
+* Fixed Bear in the Big Blue House's palette issue at the top of the screen
+* Fixed Super Mario Deluxe (and other games) palette issues
+* Fixed Mia Hamm Soccer title screen graphic issues
+* Fixed Jungle Book: Mowgli's Wild Adventure corruption when paused/unpaused
+* Fixed Klax crash when reaching level 5
+* Fixed Mickey's Speedway palette issues
+* Fixed Perfect Dark non-working digitized audio
+* Fixed Perfect Dark status bar on the right not displaying
+
+(Genesis)
+* Added full screen dithering, setting the dithering slider to 63 (maximum) will enable it
+* Removed non-functional cropping menu - use the crop left/right and top/bottom settings in video extras menu
+* Fixed interlaced mode display issues
+
+(Game Gear)
+* Fixed top line not visible
+
+(2600)
+* Fixed graphic issues on certain units (random pixels on green screens)
+* Fixed palette sometimes flashing when entering/exiting the menu
+
+(Supervision)
+* Fixed Journey to the West
+
+(Gamate, 2600, Intellivision)
+* Fixed scaling values
+
 v6.5 (Dec. 15, 2020)
 
 **General**
