@@ -88,7 +88,7 @@ The key setup for the core menus are:
 
 ## changelog
 
-v6.6 (Feb. 22, 2020)
+v6.6 (Feb. 22, 2021)
 
 (general)
 * All cores should have their video window properly centered on the X and Y axis when the sliders for position are in the center.  The exception is for cores with an extremely low original resolution, such as Game King. 
