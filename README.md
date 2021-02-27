@@ -28,7 +28,7 @@ supported). In Windows, you must use a tool for cards larger than
 [fat32format](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm).
 
 Copy
-[ntmv2_firmware_verJB6.6.bin](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/ntmv2_firmware_verJB6.6.bin)
+[ntmv2_firmware_verJB6.6.bin](https://raw.githubusercontent.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/main/firmware/ntmv2_firmware_verJB6.6.bin)
 into the root directory of your SD card.  Be sure that there is only
 one firmware file there.  Insert the card into your Nt Mini Noir and
 power on. The firmware will be flashed to the console. This process
