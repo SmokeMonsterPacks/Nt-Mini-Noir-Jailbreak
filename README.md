@@ -25,7 +25,7 @@ Format a 2GB (or larger) SD card as
 [FAT32](https://en.wikipedia.org/wiki/FAT32) (FAT16 and exFAT are not
 supported). In Windows, you must use a tool for cards larger than
 32GB, such as
-[fat32format](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm).
+[fat32format](https://fat32-format.en.softonic.com/).
 
 Copy
 [ntmv2_firmware_verJB6.6.bin](https://raw.githubusercontent.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/main/firmware/ntmv2_firmware_verJB6.6.bin)
@@ -52,7 +52,7 @@ described
 ## Step 2: System Setup
 
 Unzip [SD Card System
-Structure.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/blob/main/firmware/SD%20Card%20System%20Structure.zip)
+Structure\_verJB6.6.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/raw/main/firmware/SD%20Card%20System%20Structure_verJB6.6.zip)
 into the root directory of your SD card. You will now have a set of
 folders reflecting where game ROMs should be stored. Follow the
 instructions below for configuring the `/BIOS/` folder.
