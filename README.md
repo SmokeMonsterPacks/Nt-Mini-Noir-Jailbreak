@@ -54,7 +54,7 @@ described
 
 Unzip [SD Card System
 Structure\_verJB6.6.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/raw/main/firmware/SD%20Card%20System%20Structure_verJB6.6.zip)
-into the root directory of your SD card. You will now have a set of
+and move all the content from the unzipped folder into the root directory of your SD card. You will now have a set of
 folders reflecting where game ROMs should be stored. Follow the
 instructions below for configuring the `/BIOS/` folder.
 
