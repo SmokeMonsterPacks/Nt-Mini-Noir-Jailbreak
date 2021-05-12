@@ -16,6 +16,8 @@ repository](https://github.com/tjanas/Nt-Mini-Legacy-Jailbreak))
 
 **IMPORTANT**: Use the [NES 2.0 XML Database](https://forums.nesdev.com/viewtopic.php?f=3&t=19940&p=248796) and the [NES Header Repair Tool Python Script](https://github.com/Kitrinx/NES_Header_Repair) to fix your NES rom headers!
 
+It is recommended to have less than 800 files per subdirectory.
+
 -------------------
 
 # Updating Firmware
