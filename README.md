@@ -33,8 +33,7 @@ supported). In Windows, you must use a tool for cards larger than
 [fat32format](https://fat32-format.en.softonic.com/).
 
 Copy
-[ntmv2_firmware_verJB6.6.bin](https://raw.githubusercontent.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/main/firmware/ntmv2_firmware_verJB6.6.bin)
-into the root directory of your SD card.  Be sure that there is only
+ntmv2_firmware_verJB6.7.bin into the root directory of your SD card.  Be sure that there is only
 one firmware file there.  Insert the card into your Nt Mini Noir and
 power on. The firmware will be flashed to the console. This process
 may take three or more minutes.
@@ -56,8 +55,7 @@ described
 
 ## Step 2: System Setup
 
-Unzip [SD Card System
-Structure\_verJB6.6.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/raw/main/firmware/SD%20Card%20System%20Structure_verJB6.6.zip)
+Unzip [ntmv2_firmware_verJB6.7.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/releases/download/v6.7/ntmv2_firmware_verJB6.7.zip)
 and move all the content from the unzipped folder into the root directory of your SD card. You will now have a set of
 folders reflecting where game ROMs should be stored. Follow the
 instructions below for configuring the `/BIOS/` folder.
@@ -92,6 +90,35 @@ The key setup for the core menus are:
 
 
 ## changelog
+
+v6.7 (June 24, 2023)
+
+- Fixed Battletoads crashing on level 2
+- Fixed Bonk's Adventure boss fight floor shaking
+- Fixed Crystalis/God Slayer's not starting/getting stuck
+- Fixed Famicom Disk System dejitter setting compatibility issue (Not compatible with Zero Delay)
+- Fixed Flintstones: Rescue of Dino & Hoppy jumping title screen and status bar
+- Fixed Flintstones: Surprise at Dinosaur Peak jumping status bar
+- Fixed G.I. Joe cartridge crashing
+- Fixed Little Nemo cartridge freezing
+- Fixed Mega Man V robot screen jumping
+- Fixed Micro Mages graphical & audio glitches with cartridge
+- Fixed Mighty Final Fight freezing
+- Fixed Shadow of the Ninja freeze on opening cutscene
+- Fixed Summer Carnival '92: Recca jumpy status bar
+- Fixed Vertical Green Lines in games using CHR-RAM (Castlevania, Legend of Zelda, Mega Man 1 & 2, Rygar, many others)
+- Fixed Vice: Project Doom 2nd stage status bar jumping
+- Fixed Crystalis freezing when a controller is inserted into port 2
+- Fixed Paperboy Player 2 control input
+- Fixed Micro Mages 3-4 player control input
+- Added headphone Jack L/R Swap to Audio - Headphones (note will swap RCA jacks to opposite of their labeling)
+- Microphone sensitivity setting is now reversed - 0 is minimum intensity, 63 is maximum intensity. Default setting is tuned for most games supping the microphone
+- NSF Audio Levels & Panning settings are now separate from cartridge settings
+- Fixed Atari 2600 graphic issues
+- Fixed Genesis, Sega Master System, Game Gear and ColecoVision Cores crash issue
+- Fixed Intellivision RAM not cleared before loading a game
+- Improved Intellivision's third fire button is now mapped to Famicom Network Controller's 0 button for easier access, Intellivision numberpad 0 button has been remapped to Famicom Network Controller's . button
+- Improved: Odyssey^2 controllers swapped
 
 v6.6 (Feb. 22, 2021)
 
