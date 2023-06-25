@@ -47,7 +47,7 @@ present a new option, `Cores`, to signify it is Jailbreak mode.
 The Nt Mini Noir is protected from bricking as a result of firmware
 updates, but follow the above precautions to be safe. If need be you
 can always reinstall the [official
-firmware](https://assets.analogue.co/firmware/9ee381e5db900ff1975619f1cab5e4be/ntmv2_firmware_ver1.3.bin). If
+firmware v1.3](https://assets.analogue.co/firmware/9ee381e5db900ff1975619f1cab5e4be/ntmv2_firmware_ver1.3.bin), [v1.2](https://assets.analogue.co/firmware/f0e6faa22f826903767dc1a026e6c2bb/ntmv2_firmware_ver1.2.bin), [v1.1](https://assets.analogue.co/firmware/cd302f3b080f40004634a0f42f5f4c37/ntmv2_firmware_ver1.1.bin), or [v1.0](https://assets.analogue.co/firmware/660cc2544aed5bdcf482cc193ee2155e/ntmv2_firmware_ver1.0.bin). If
 you encounter difficulties, make sure you are following the steps
 described
 [here](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/issues/10).
