@@ -1,6 +1,6 @@
 # Nt-Mini-Noir-Jailbreak
 
-**NOTE: the latest Jailbreak firmware (v6.7) can be found at the [analoguejb](https://github.com/analoguejb/Analogue-Nt-Mini-Noir-JB) GitHub page.**
+**NOTE: the latest Jailbreak firmware can now be found at the [analoguejb](https://github.com/analoguejb/Analogue-Nt-Mini-Noir-JB) GitHub page. If you have any issues, old or new, please open a ticket there.**
 
 Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
