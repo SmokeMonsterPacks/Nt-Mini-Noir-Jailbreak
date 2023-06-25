@@ -47,7 +47,7 @@ present a new option, `Cores`, to signify it is Jailbreak mode.
 The Nt Mini Noir is protected from bricking as a result of firmware
 updates, but follow the above precautions to be safe. If need be you
 can always reinstall the [official
-firmware](https://support.analogue.co/hc/en-us/articles/360052916371-Nt-mini-Noir-Firmware-Update-v1-0). If
+firmware](https://assets.analogue.co/firmware/9ee381e5db900ff1975619f1cab5e4be/ntmv2_firmware_ver1.3.bin). If
 you encounter difficulties, make sure you are following the steps
 described
 [here](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/issues/10).
@@ -55,7 +55,7 @@ described
 
 ## Step 2: System Setup
 
-Unzip [ntmv2_firmware_verJB6.7.zip](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/releases/download/v6.7/ntmv2_firmware_verJB6.7.zip)
+Unzip [ntmv2_firmware_verJB6.7.zip](https://github.com/analoguejb/Analogue-Nt-Mini-Noir-JB/releases/download/v6.7/ntmv2_firmware_verJB6.7.zip)
 and move all the content from the unzipped folder into the root directory of your SD card. You will now have a set of
 folders reflecting where game ROMs should be stored. Follow the
 instructions below for configuring the `/BIOS/` folder.
