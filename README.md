@@ -1,5 +1,7 @@
 # Nt-Mini-Noir-Jailbreak
 
+**NOTE: the latest Jailbreak firmware (v6.7) can be found at the [analoguejb](https://github.com/analoguejb/Analogue-Nt-Mini-Noir-JB) GitHub page.**
+
 Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
 - Famicom Disk System support added
