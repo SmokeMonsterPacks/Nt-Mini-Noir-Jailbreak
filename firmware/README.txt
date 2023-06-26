@@ -1,18 +1,47 @@
-Jailbreak
-----------------
+-----------------
+Table of Contents
+-----------------
 
--Famicom Disk System support added
--New NES core 100% supports 2.0 mappers
--Genesis core added
--Intellivision core added
--Megaduck core added
--SPC player added
--Mandelbrot zoomer added
+You can navigate this document by using this list of the major topics covered in it:
+
+Updating the Firmware
+Latest Update
+Cores Menu
+NES/Famicom Core Release Notes
+Atari 2600 Core Release Notes
+Atari 7800 Core Release Notes
+Sega Genesis Core Release Notes
+SMS Core Release Notes
+Game Gear Core Release Notes
+Colecovision Core Release Notes
+Gameboy Core Release Notes
+Gameboy Color Core Release Notes
+Intellivision Core Release Notes
+Mandelbrot Core Release Notes
+Adventurevision Core Release Notes
+Arcadia 2001 Core Release Notes
+Channel F Core Release Notes
+Creativision Core Release Notes
+Gamate Core Release Notes
+Game King Core Release Notes
+Odyssey^2 Core Release Notes
+RCA Studio 2 Core Release Notes
+Supervision Core Release Notes
+Videobrain Core Release Notes
+Megaduck Release Notes
+Controller Support Summary
+Wireless Controller Functionality Reference
+Required/Supported BIOS Files
+Prior Update History
+
+---------------------
+Updating the Firmware
+---------------------
 
 First off, to use the JB mode, perform the following steps:
 
 * Format an SD card with FAT32.
-* Unzip this pack directly to the SD card, keeping all directories/folders intact.
+* Unzip this pack directly to the root of the SD card, keeping all directories/folders intact.
 * Add your ROMs to the proper directory.  i.e. NES ROMs go in /NES/
 * Insert the SD card into the nt mini and power it up.
 * The system will perform an update which takes approximately 3 minutes.  The front LED will flash.
@@ -21,103 +50,84 @@ First off, to use the JB mode, perform the following steps:
 
 If you wish to install JUST the updates and not reformat your card, perform the following steps:
 
-(general)
-
-* Replace the /SYSTEM/ directory on your SD card
+* Replace the /SYSTEM/ directory on your SD card and all .NT2 files
 * Add any subdirectories that do not exist on your current card
-* Add any new BIOS files listed in the text file in the /BIOS directory.
-* Load your games into the new directories.
+* Add any new BIOS files for Cores you wish to use, listed below, in the /BIOS directory.
+* Load any newly supported games into the new directories.
 * On powerup, the Nt Mini will update and will be ready to go!
 
+CAUTION: be sure to replace the .NT2 files in /system/cores with the ones in this archive or else
+new features and fixes that were added in this jailbreak version WILL NOT WORK.
+
+-------------
 Latest Update
 -------------
-(previous updates will be moved to the very bottom of the document)
 
-(general)
-* Controller test added
-* Fixed L/R reverse on RCA jacks
-* Fixed filter cutoff display bug
+(previous update notes will be found at the very bottom of the document)
 
-(NES)
-* Added full FDS support with manual, semiautomatic and automatic side switching (see NES section below for operation notes)
-* Added Super Russian Roulette mapper (#413)
-* Added support for Haunted Halloween '85 and '86
-* Added Vs. palette support for composite and s-video
-* Reduced default expansion audio level for better balance with internal audio.
-* Passthrough mode can now be cancelled by tapping reset twice.
-* Fixed CopyNES mini save WRAM dumping, save games on cartridges can now be preserved
-* Fixed Vice Project Doom / Gun-Dec starting in debug mode with second controller plugged in
-* Fixed VRC6 register swap function.  Use both VRC6 and VRC6 Swap for Madara and Esper Dream 2 and just VRC6 for Akumajou Densetsu
-* Fixed FDS Audio channel imbalance when panning sliders are centered
-* Fixed small FDS channel bug
-* Fixed popping square wave audio in Egger Land - Souzou e no Tabidachi and Eggerland - Meikyuu no Fukkatsu
-* Fixed Vs. Goonies graphic issue
-* Fixed Game of the Goose graphic issues (#512)
-* Fixed DPCM corruption bug for PAL and Dendy Modes
-* Fixed MMC5 Castlevania III PAL cartridge functionality
-* Fixed Dendy mode for EverDrives and Cartridges
-* Fixed Dendy mode NMI flag
+v6.7 release 05/04/23
 
-(GB/GBC)
-* Fixed palette issues affecting multiple games (Pokemon Pinball, Mega Man Xtreme, Pooh & Tigger's Hunny Safari, Harvest Moon 3)
-* Fixed wave channel audio bug
-* Fixed Tokyo Disney crash when playing 5th level
-* Fixed crash in Barbie Magic Genie Adventure when using powers
-* Fixed Razor Freestyle Scooter and Lufia failing to load
-* Fixed Lego Racers cloud color bug
- 
-(Colecovision)
-* Added Famicom Network controller functionality
-* Fixed Penguin Adventure
+* Fixes to CPU:PPU alignment which include:
+* Fixed: Battletoads crashing on level 2
+* Fixed: Bonk's Adventure boss fight floor shaking
+* Fixed: Crystalis/God Slayer's inability to start game, getting stuck
+* Fixed: Famicom Disk Systems work regardless of dejitter setting (Not compatible with Zero Delay)
+* Fixed: Flintstones: Rescue of Dino & Hoppy jumping title screen and status bar
+* Fixed: Flintstones: Surprise at Dinosaur Peak jumping status bar
+* Fixed: G.I. Joe cartridge crashing
+* Fixed: Little Nemo cartridge freezing
+* Fixed: Mega Man V robot screen jumping
+* Fixed: Micro Mages graphical & audio glitches with cartridge
+* Fixed: Shadow of the Ninja freeze on opening cutscene
+* Fixed: Summer Carnival '92: Recca jumpy status bar
+* Fixed: Mighty Final Fight freezing
+* Fixed: Vice: Project Doom 2nd stage status bar jumping
 
-(Genesis)
-* Added Famicom Network controller functionality
-* Fixed Audio sliders bug
+* Fixed: Kirby's Adventure PAL palette corruption on EverDrive N8 Pro (requires latest EverDrive N8 Pro OS)
+* Fixed: Vertical Green Lines in games using CHR-RAM (Castlevania, Legend of Zelda, Mega Man 1 & 2, Rygar, many others)     and EverDrive N8
+* Fixed: Crystalis freezing when a controller is inserted into port 2
+* Fixed: Paperboy Player 2 control input
+* Fixed: Micro Mages 3-4 player control input
+* Added: Headphone Jack L/R Swap to Audio - Headphones (note will swap RCA jacks to opposite of their labeling)
+* Improved: Microphone sensitivity reversed, 0 is minimum intensity, 63 is maximum intensity. Default setting is tuned   for most games supporting the microphone.
+* Improved: NSF Audio Levels & Panning settings separate from cartridge settings
+* Fixed: Atari 2600 graphic issues.
+* Fixed: Genesis, Sega Master System, Game Gear and ColecoVision Cores crash issue.
+* Fixed: Intellivision RAM not cleared before loading a game.
+* Improved: Intellivision's third fire button is now mapped to Famicom Network Controller's 0 button for easier access
+* Improved: Intellivision numberpad 0 button has been remapped to Famicom Network Controller's . button.
+* Improved: Odyssey^2 controllers swapped.
 
-(SMS)
-* Added Famicom Network controller functionality
-* Fixed BIOSes loading built in games
-* Use "end" button on Famicom Network or Super Famicom NTT Data Keypad to simulate pressing console reset button
 
-(Intellivision)
-* Added Famicom Network controller functionality.  0, A, B are the three buttons. 0 on the keypad is remapped to .
-* Added Player 1/2 swap to cores menu
-
-(SPC)
-* Fixed audio static bug
-
-*changelog*
------------
-
-v6.2 (initial release)
-
+----------
 Cores Menu
 ----------
 
 The cores menu lets you select one of the various cores that are and will be available.  
-To run a specific core (say, NES) simply select it.  If the core needs to be loaded, a box will pop up asking you if you wish to load it.  The loading takes approximately 4 seconds.
+To run a specific core (say, NES) simply select it.  The loading takes approximately 4 seconds.
 
 During the core loading, the front LED will flicker rapidly to indicate it is loading.  While this happens, the monitor will show no signal, since the FPGA is being reconfigured at this time.
-After the loading, the monitor will come back and you will be sitting in the file browser for this particular core.
+After the loading, the monitor will come back and you will be sitting in the file browser for this particular core (Mandelbrot does not have one).
 
 The key setup for the core menus are:
 
-* UP/DOWN: Select a file
+* UP/DOWN: Navigate through the file browser one file at a time
 
-* LEFT/RIGHT: Page through the files quickly 16 at a time
+* LEFT/RIGHT: Page through the files in the file browser quickly, 21 at a time
 
-* B: Pressing once will take you to the top of the file list.  pressing again takes you to the bottom.
+* B: Sends you up a directory
 
 * A: Run the game.
 
 * START: enter the settings menu. This is slightly different from the main menu.  There may be a "Core Options" settings menu.  Everything core specific will be found here.
 
-* SELECT: exit the menu. You will be asked to confirm.  If you confirm, it returns to the core select   menu.  If you do not wish to exit, it returns to the currently running game.
+* SELECT: exit the menu and return to the file browser.  Press select again to return to the currently running game.
 
+------------------------------
 NES/Famicom Core Release Notes
 ------------------------------
 
-This core is extremely large and encompasses 279 mappers.  All the major mappers and many other mappers are implemented and work.  NES 2.0 headers are 100% supported and many NES 2.0 mappers are included.  Every mapper was completely rewritten using the most current information available.
+This core is extremely large and encompasses 280 mappers.  All the major mappers and many other mappers are implemented and work.  NES 2.0 headers are 100% supported and many NES 2.0 mappers are included.  Every mapper was completely rewritten using the most current information available.
 
 *save games*
 ------------
@@ -155,7 +165,9 @@ Famicom version.  It must be named fds.bin
 Several methods to load disks and change sides are provided in a new menu
 titled "FDS" that appears on the cores menu only when an FDS game is loaded.
 
-By default, "automatic" mode is selected.  This mode will automatically load the first side of the FDS image and run it without user intervention.  It will also detect the side and disk the game is attempting to load, and will automatically select the side for you.  The loading prompts are also automatically passed so usually no intervention is required to play the games.
+By default, "automatic" mode is selected.  This mode will automatically load the first side of the FDS image and run it without user intervention.
+It will also detect the side and disk the game is attempting to load, and will automatically select the side for you.
+The loading prompts are also automatically passed so usually no intervention is required to play the games.
 
 There are a few exceptions to this, however, and a few games need to be loaded manually.  These are listed later.
 
@@ -163,9 +175,9 @@ When an FDS game is loaded, a new FDS menu appears on the main menu.  This menu 
 
 In the menu, the auto/manual selection can be made, and a disk ejected, and/or a new side can be selected. 
 
-Saving:  When the file menu is opened,  the FDS disk data is saved to a .sav
-file like with cartridge games, however the data is no longer in .fds format;
-it is in the expanded disk format with gaps and CRCs.  This is due to the fact that .fds files must be expanded to be loaded.  When loading a game with an existing .sav file, the .sav file will be loaded and the contents of the .fds will NOT be used, except to determine the number of disk sides the game
+Saving:  When the file menu is opened,  the FDS disk data is saved to a .sav file like with cartridge games, however the data is no longer in .fds format;
+it is in the expanded disk format with gaps and CRCs.  This is due to the fact that .fds files must be expanded to be loaded.
+When loading a game with an existing .sav file, the .sav file will be loaded and the contents of the .fds will NOT be used, except to determine the number of disk sides the game
 contains.
 
 This means if you wish to reload a game from the .fds to play it, its .sav file must be deleted, or the .fds renamed.  This way the original file is not modified.
@@ -175,15 +187,18 @@ A .sav file will NOT be created unless the contents of the disk were modified. T
 There are three ways to handle disk changing:
 
 Manual mode:  You must manually select disks and sides in the menu.
-You do not need to eject before changing disks or sides;  it wil perform a
+You do not need to eject before changing disks or sides; it will perform a
 1/4th second eject for you.
 
 Semiautomatic mode functionality:  This is the default mode.  Pressing select
 will eject the disk as long as select is down, and for about 1/2 second after
-it is released, and then auto-select the proper disk and side.
+the button is released, and then auto-select the proper disk and side.
 
-Some games such as Doki Doki Panic have an unusually long wait
-to check for a disk being ejected so this accommodates that.   Note that since select ejects the disk, it is not a good idea to do this while a game is loading since it will throw an error 01.  Usually most games can recover from this though, and will attempt to load again.  The same caveats with automatic mode follow over to semiautomatic mode with regards to a few games not being able to autodetect the side/disk.  No known games or software have an issue with the disk being ejected once they have loaded, and only check it when they wish to load or are actively loading.
+Some games such as Doki Doki Panic have an unusually long wait to check for a disk being ejected so this accommodates that.  
+Note that since select ejects the disk, it is not a good idea to do this while a game is loading since it will throw an error 01.
+Usually most games can recover from this though, and will attempt to load again.
+The same caveats with automatic mode follow over to semiautomatic mode with regards to a few games not being able to autodetect the side/disk.
+No known games or software have an issue with the disk being ejected once they have loaded, and only check it when they wish to load or are actively loading.
 
 Automatic mode functionality:  The automatic mode works fine for most games
 except those outlined below.  It has a few extra features that are activated
@@ -236,15 +251,17 @@ CCCC - 9.695
 
 O = switch open ("off"), C = switch closed ("on")
 
-Dip Switches always default to Off, so you should set the Dip Switches and then press Reset.  These games are started by pressing start on the 2nd controller.
+Dip Switches always default to Off, so you should set the Dip Switches and then press Reset.  These games are usually started by pressing Select.
 
 Coin insertion is done using the trigger on a 12 button controller, and can also be done on the dipswitch submenu if this mapper supports.  All Vs. mappers and mapper 126 (arcade board) use this.
 
-Nt Mini Noir's Core Jailbreak has full Vs. System support for any known game which does not use Vs. Dual System capabilities.  This means that Vs. Balloon Fight, Vs. Baseball, Vs. Ice Climber Dual, Vs. Mahjong, Vs. Raid on Bungeling Bay, Vs. Tennis and Vs. Wrecking Crew are not playable, but the rest are playable.
+Nt Mini Noir's Core Jailbreak has full Vs. System support for any known game which does not use Vs. Dual System capabilities.  This means that Vs. Balloon Fight, Vs. Baseball, Vs. Ice Climber Dual, Vs. Mahjong, Vs. Tennis and Vs. Wrecking Crew are not playable, but the rest are playable.
 
 Vs. System games require full NES 2.0 headers to work properly.  Use the NES 2.0 XML Database and the NES Header Repair Tool Python Script to fix your headers.
 
-Vs. Tetris - Has only 24KiB of PRG-ROM but the jailbreak will only load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of 00s inserted between the header and start of the PRG-ROM to get the game to work.  
+Vs. Tetris - Has only 24KiB of PRG-ROM but the jailbreak will only load a ROM with 32KiB of PRG-ROM.  You can add 8,192 padding bytes of 00s inserted between the header and start of the PRG-ROM to get the game to work.
+
+Vs. Raid on Bungeling Bay - Must have its protection check patched out.
 
 Vs. System games obtain their settings from a bank of eight dip switches, these will be found as Dips 1-8 under Core Options - Dip Switches.  If you are not using a SNES-style controller, you can Add a Coin with the Dip Switch menu.  
 
@@ -533,6 +550,7 @@ Some of the Sachen multi-carts also have issues inherent to their ROMs : Super C
 346   - Zanac FDS Conversions
 358   - mapper 90 variant 512K outer bank
 389   - Caltron 9 in 1
+413   - Super Russian Roulette
 512   - Sachen Game of the Goose (honk honk!)
 513   - Sachen Princess Maker game port
 516   - Edubank MMC3 thing
@@ -543,7 +561,7 @@ Some of the Sachen multi-carts also have issues inherent to their ROMs : Super C
 554   - FDS Castlevania conversion
 555   - NES-EVENT2
 
-CopyNES mini
+CopyNES Mini
 ------------
 
 This lets you dump cartridges and their save RAM (if equipped) directly to the SD card!  There are many supported mappers.
@@ -552,25 +570,25 @@ To dump a game, follow these steps:
 
 * Insert the game in question into the cartridge slot.
 * Select 'Run Cartridge' to make sure it works and is making good contact.
-* Enter the Tools menu and select "Copynes mini".
+* Enter the Tools menu and select "Copynes Mini".
 * Select the mapper that your game uses.  Use the NES 2.0 XML Database to find the mapper for your game.
-
-* Hit B to start the dump.  Note that it might take awhile (30 seconds) to determine the size of
+* Note that it might take a while (up to 30 seconds) to determine the size of
   the ROMs on the cartridge.
-* After the game is dumped, you can enter a filename using up/down/left/right.  If no
+* After the game is dumped, you can enter a filename using the Confirm button.  If no
   name is entered, it will save it with a filename determined by the sumcheck of the ROM.
-* Hitting B will save the ROM.  
+* If your game has battery backed WRAM, checking the Battery box with the Confirm button will save the contents of that WRAM to an .sav file.
+* Hitting Confirm will save the ROM, hitting Back will cancel any writing to the SD Card and your ROM and RAM will not be saved.
 
 That's it!  You can test the game by going into the cores menu and selecting "NES", then
 going to the /COPYNES/ directory and running the ROM.
 
-
+-----------------------------
 Atari 2600 Core Release Notes
 -----------------------------
 
 The Atari 2600 core currently only supports joystick games.
 
-Atari 2600 games determine the number of scanlines they will use.  In HDMI mode, the display window for Atari 2600 games is 160 pixels by 239 pixels, which is adequate for most games.  A few games (Pick and Pile, and Acid Drop) produce far too many scanlines, the viewport can be centered so that most of the screen is visible.
+Atari 2600 games determine the number of scanlines they will use.  In HDMI mode, the display window for Atari 2600 games is 160 pixels by 238 pixels, which is adequate for most games.  A few games (Pick and Pile, and Acid Drop) produce far too many scanlines, the viewport can be centered so that most of the screen is visible.
 
 Controller mapping:
 -------------------
@@ -621,7 +639,7 @@ file consisting of the 64K worth of data EPROMs, followed by the 2K EPROM.
 Palettes:
 ---------
 
-All three palettes are supported: NTSC, PAL, and SECAM.   There is also an 
+All three palettes are supported: NTSC, PAL, and SECAM.  There is also an 
 "automatic" mode that will select between NTSC and PAL in most cases.  It does
 this by checking the scanline count.  If it's greater than 284, then the PAL
 palette is selected, otherwise NTSC is.
@@ -725,7 +743,7 @@ Other changes:
 Dig Dug needs to have the first 256 bytes zeroed out (or set to all FF's) so that
 the extra RAM can be detected properly.
 
-
+-----------------------------
 Atari 7800 Core Release Notes
 -----------------------------
 
@@ -754,36 +772,44 @@ Atari 7800 ROMs use headers.  There are a few ROMs with bad headers, here is how
 
 This core needs a BIOS to run which you can select with Core Options.  The Core will load the file 7800bios.bin found in the /BIOS/ Directory by default.
 
+-------------------------------
+Sega Genesis Core Release Notes
+-------------------------------
 
-Sega Genesis Jailbreak Notes
-----------------------------
-
-The Sega core supports all official Genesis ROMs except for Virtua Racing and does not run 32x ROMs and common unlicensed games.
+The Sega core supports all official Genesis ROMs except for Virtua Racing and does not run 32x ROMs and some uncommon Taiwan unlicensed games.
 
 *Button Mapping*
 ----------------
 
 With a NES controller, Button C on a Genesis 3-button controller is mapped to Select.  Other mappings are as follows :
 
-Genesis   SNES
-      A = B
-      B = Y
-      C = A
-      X = X
-      Y = L
-      Z = R
+Genesis   SNES/NTT Data Keypad
+    A   =   B
+    B   =   Y
+    C   =   A
+    X   =   X
+    Y   =   L
+    Z   =   R
 
-Genesis   M30
-      A = B
-      B = Y
-      C = A
-      X = X
-      Y = Z
-      Z = C
+Genesis   8bitdo M30
+    A   =   B
+    B   =   Y
+    C   =   A
+    X   =   X
+    Y   =   Z
+    Z   =   C
 
+Genesis   Famicom Network
+    A   =   0
+    B   =   B
+    C   =   A
+    X   =   6
+    Y   =   #
+    Z   =   .
 
-SMS Core Release Notes
-----------------------
+------------------------------
+SMS/SG-1000 Core Release Notes
+------------------------------
 
 The SMS core runs games released for the Sega Mark III and the Master System.
 This core also runs SG-1000 games but you must use the Japanese BIOS or no BIOS, however.
@@ -826,8 +852,7 @@ etc. ROMs.
 
 Some ROMs have a useless 512 byte header at the beginning that is mostly 0's. If this is found, it is ignored.
 
-Some versions of the system have a "game reset" button.  You may activate this feature by pressing select and X at the same time on a SNES controller or by pressing the "End" button on Famicom Network or Super Famicom NTT Data Keypad.  That is a safeguard to prevent it accidentally being pressed and resetting
-the game.
+Some versions of the system have a "game reset" button.  You may activate this feature by pressing select and X at the same time on a SNES controller or by pressing the "End" button on Famicom Network or Super Famicom NTT Data Keypad.  That is a safeguard to prevent it accidentally being pressed and resetting the game.
 
 Pause is mapped to the start button like you'd expect.
 
@@ -835,6 +860,7 @@ Lastly, you can turn the YM2413 on and off.  This is because a couple games cras
 
 *Problems and how to solve them*
 --------------------------------
+
 SG-1000:
 Unselect "Use BIOS" for playing these games or select the Japanese BIOS.
 Also, select Japan as the Region in System/Hardware.
@@ -846,19 +872,19 @@ You may need to pivot between the US and Japanese BIOSes for certain games to wo
 
 * PAL games might have problems such as sprite flicker- this is normal and happens on an NTSC system too.
 
-* Some games (Walter Payton Football, Spy vs. Spy) need the US BIOS to work.  The former runs but has initial  title screen corruption and the latter doesn't start at all.
+* Some games (Walter Payton Football, Spy vs. Spy) need the US BIOS to work.  The former runs but has initial title screen corruption and the latter doesn't start at all.
 
 * MSX Ports larger than 48K use unusual mappers and are not supported.
 
 * Games that require a paddle controller, light gun or the 3-D glasses will not work.  
-   
-* Wanted - you must turn off FM for this game to work but it still requires a light fun
+
+* Wanted - you must turn off FM for this game to work but it still requires a light gun, so the game is not playable.
 
 * Super Tank - select one of the "export" options in System/Hardware.
 
-* Back to the Future 3: locks up at black screen because it detects PAL/NTSC and will refuse to work if it detects 
+* Back to the Future 3 - locks up at black screen because it detects PAL/NTSC and will refuse to work if it detects NTSC.  It is a PAL game.
 
-
+----------------------------
 Game Gear Core Release Notes
 ----------------------------
 
@@ -912,14 +938,13 @@ Micro Machines
 Micro Machines 2: Turbo Tournament
 Pete Sampras Tennis
 
-The Core will not play any games that use EEPROM for saving properly at this time, they will refuse to load.  The following games are the only known games to use EEPROM :
+The Core will not play any games that use EEPROM for saving, they will refuse to load.  The following games are the only known games to use EEPROM :
 
 Hyper Pro Yakyuu '92
 Majors Pro Baseball, The
 Pro Yakyuu GG League
 World Series Baseball
 World Series Baseball '95 (including prototypes)
-
 
 Colecovision Core Release Notes
 -------------------------------
@@ -958,21 +983,24 @@ Ltrig + Rtrig + right = 9
 
 *Special ROM handling*
 ---------------------------------
-Two reproduction games, The Black Onyx and Boxxle use EEPROM for saving, 256 bytes and 32KB, respectively.  Rename their extensions to .ce0 and .ce1, respectively to get them working.  A third reproduction game, Gradius, saves to flash memory and uses a custom mapper.  Rename its extension to .cf0 to get it working. 
+Two reproduction games, The Black Onyx and Boxxle use EEPROM for saving, 256 bytes and 32KB, respectively.  Rename their extensions to .ce0 and .ce1, respectively to get them working.  
+A third reproduction game, Gradius, saves to flash memory and uses a custom mapper.  Rename its extension to .cf0 to get it working. 
 
-
+--------------------------
 Gameboy Core Release Notes
 --------------------------
 
-The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy's bootstrap (BIOS)  for it to work.  dmgbios.bin is the default file to be loaded if found in the /BIOS/ directory.  The Super Gameboy bootstrap also seems to work and skips the scrolling intro.
+The Gameboy core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy's bootstrap (BIOS) for it to work.  
+dmgbios.bin is the default file to be loaded if found in the /BIOS/ directory.  The Super Gameboy bootstrap also seems to work and skips the scrolling intro.
 
-
+--------------------------------
 Gameboy Color Core Release Notes
----------------------------------
+--------------------------------
 
-The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy Color's bootstrap (BIOS) for it to work.  gbcbios.bin is the default file to be loaded if found in the /BIOS/ director
+The Gameboy Color core supports games using MBC1, MBC2, MBC3 (except RTC saving) and MBC5 (except rumble).  You must select the Gameboy Color's bootstrap (BIOS) for it to work.
+gbcbios.bin is the default file to be loaded if found in the /BIOS/ directory.
 
-
+--------------------------------
 Intellivision Core Release Notes
 --------------------------------
 
@@ -1014,6 +1042,19 @@ The other bits may be used in the future for bankswitched games and/or homebrews
 
 The BIOS you wish to use also needs to be in this format, since the different BIOSes (i.e. intv2) load data in different places.
 
+-----------------------------
+Mandelbrot Core Release Notes
+-----------------------------
+
+The Mandelbrot Core only works with an HDMI video connection, it does not work via analog video output.  To exit the Core "blind", press Menu, then B then A.
+
+With a NES Controller, zooming into the Set is accomplished by using button B and zooming out by using button A.  Moving the D-pad will move around the Set.  Pressing Start will reset to the default view of the Set and pressing Select will show a Julia Set representation based on the current center coordinates of the screen for the Mandelbrot Set.  The further you are zoomed in on the Mandelbrot Set, the Julia Index changes in increasingly finer steps.  
+
+The Core has a finite ability to zoom in on a Set and eventually will begin to "stretch" the image instead of zooming in on the patterns. If zoomed in beyond the maximum zoom, you may see a display glitch of purple vertical lines.  This glitch will persist until you press Start to reset the zoom and positioning or zoom into a frame without the purple stripes and then zoom out.
+
+This Core is best experienced with a SNES Controller.  With a SNES Controller, button Y zooms in and button B zooms out.  The Mandelbrot Set renders internally at 640x480, but the resolution is halved 320x240 by default, use button A to change it to 640x480.  The higher resolution will make movement and zooming slower, as will increasing the Number of Iterations in the Core Options, but will give more detail to the set.  The shoulder buttons L and R allow for color cycling outside the plotted set and the X button will adjust the Julia Index to sweep through many nearby Julia Sets.
+
+----------------------------------
 Adventurevision Core Release Notes
 ----------------------------------
 
@@ -1030,7 +1071,7 @@ Turtles seems to have a graphical "bug" on it, the right size of the maze is shi
 
 Defender likewise has a bad collision bug on original hardware, you can often shoot through enemies, this appears to occur due to the game checking only when your shots touch the edge of an enemy sprite.
 
-
+-------------------------------
 Arcadia 2001 Core Release Notes
 -------------------------------
 
@@ -1067,7 +1108,7 @@ start = start (both controllers)
 select = select (both controllers)
 Y = fire button
 
-
+----------------------------
 Channel F Core Release Notes
 ----------------------------
 
@@ -1130,7 +1171,7 @@ to start one of the 4 games.
 
 It seems many games choose one controller port at random to use for player 1 (i.e. some games use controller port 1, some use controller port 2) so if a game does not seem playable, add a second controller or swap ports.
 
-
+-------------------------------
 Creativision Core Release Notes
 -------------------------------
 
@@ -1150,7 +1191,7 @@ The B and A buttons are mapped to the two fire buttons, and start/select are map
 
 On startup, most games will run, show a demo mode and even appear to respond to controller input.  To get out of demo mode, you must reset the system.
 
-
+-------------------------
 Gamate Core Release Notes
 -------------------------
 
@@ -1162,9 +1203,9 @@ and placed in the /BIOS directory on your SD card.
 
 There are three mappers on the system, and two of these can be distinguished by file size, however the multicart(s) need the .GML extension.  So rename the file from i.e. 4-in-1.bin to 4-in-1.gml to run it.
 
-
+----------------------------
 Game King Core Release Notes
--------------------------
+----------------------------
 
 This core needs a BIOS.  It should be named:
 
@@ -1179,7 +1220,7 @@ simply run the included file, "play bios games.bin".  This is an empty file
 consisting of nothing but bytes of 0xff.  This simulates having no cartridge
 in the system.
 
-
+----------------------------
 Odyssey^2 Core Release Notes
 ----------------------------
 
@@ -1226,7 +1267,7 @@ All Odyssey^2 keys map to their corresponding keys on a PC keyboard except "clea
 
 Most games can be played without the keyboard, due to the mapping of 1-4 from the keyboard which are usually used to start games.  Some games like Killer Bees start using the fire button.
 
-
+-------------------------------
 RCA Studio 2 Core Release Notes
 -------------------------------
 
@@ -1264,7 +1305,7 @@ Note: When the system is first started and a game is loaded, it's overwritten by
 so the first games that will play are the BIOS games.  Loading another game or the same one again
 will cause it to load the game as desired.
 
-
+------------------------------
 Supervision Core Release Notes
 ------------------------------
 
@@ -1272,7 +1313,7 @@ The Supervision core plays all games and does not require a BIOS.
 
 sssnake appears to output a very quiet sound when you pick something up, but this is a bug in the program.  The game is playing one of the drum samples really slowly so it doesn't make much sound.
 
-
+-----------------------------
 Videobrain Core Release Notes
 -----------------------------
 
@@ -1327,7 +1368,7 @@ Many of the games need the keyboard to start them.
 
 There is an empty binary file that lets you use the built in BIOS functions.
 
-
+----------------------
 Megaduck Release Notes
 ----------------------
 
@@ -1337,3 +1378,278 @@ Megaduck has no BIOS but it does have mappers.
 ---------------------------------
 There are two different mappers for Megaduck.  They are selected by extension.  .MD1 selects the single 32K selectable bank mode, and .MD2 selects the 16K selectable bank mode.  
 All games greater than 32K need the .MD2 extension except for the following two games: Puppet Knight and Suleiman's Treasure. These need the .MD1 extension.  32K games do not need a special extension.
+
+--------------------------
+Controller Support Summary
+--------------------------
+
+Core Name               NES     SNES    FC Net  NTT Data   Note Ref #
+
+NES                     F       E       L       E           1
+NSF Player              F       F       N       F
+Atari 2600              F       E       N       E           2
+Atari 7800              F       E       N       E           3
+Genesis                 L       F       F       F           4
+SMS/SG-1000             F       E       E       E           5
+Game Gear               F       F       F       F
+Colecovision            L       F       E       E           6
+Gameboy                 F       F       N       F
+GBC                     F       F       N       F
+Intellivision           L       L       F       F           7
+Mandelbrot              L       F       N       F           8
+SPC Player              F       F       N       F
+Adv. Vision             F       F       N       F           
+Arcadia 2001            L       F       N       E           6
+Channel F               L       F       N       E           9
+Creativision            F       F       N       F          10
+Gamate                  F       F       N       F
+Game King               F       F       N       F
+Odyssey^2               L       L       N       L          11
+RCA Studio II           F       E       N       E+         12
+Supervision             F       F       N       F
+Video Brain             L       L       N       L          11
+Megaduck                F       F       N       F
+
+Key                     Designation     Explanation
+Full Functionality      F               Controller is fully functional with this Core
+Extra Functionality     E               Controller brings extra convenience to using the Core, but is not essential
+Limited Functionality   L               Controller does not have sufficient features to play all games another controller has for this Core
+
+Notes
+
+1 - FC Network works as a Standard Famicom Controller 3 with its limitations (no menu access, requires per-game support to be read as Controller 1).  SNES Shoulder Buttons allow Vs. Coin input.
+
+2 - SNES Buttons Allow Control over TV Type, Difficulty Switches and Supercharger Load without Menu Access
+
+3 - SNES Buttons Allow Control Pause and Difficult Switches without Menu
+
+4 - NES cannot support 6-button controller input
+
+5 - Non-NES controllers add reset button support, which was only present for original Master Systems
+
+6 - NES has no numberpad support, SNES requires D-Pad and Button combo for numberpad
+
+7 - NES and SNES have no numberpad support
+
+8 - SNES Buttons allow for resolution change (A), color cycling (L & R) and Julia Index manipulation (X)
+
+9 - NES has limited console switch support, SNES uses lettered buttons for console switches
+
+10 - Keyboard not supported, this is the best option the Core supports
+
+11 - System includes a keyboard, 100% software compatibility is limited without the Custom PS/2 Adapter
+
+12 - SNES lets you hold A to hit diagonals easily, NTT allows numberpad use (the controllers for this system are just numberpads)
+
+-------------------------------------------
+Wireless Controller Functionality Reference
+-------------------------------------------
+
+8bitdo Product  Protocol    Functionality   Receiver Type       Notes
+
+NES30/SNES30@   Bluetooth   SNES            Retro Receiver      Discontinued, requires old custom firmware^
+M30/SN30*       Bluetooth   NES             Retro Receiver      Current Firmware
+M30/SN30        2.4g        SNES            SNES 2.4g Adapter   Requires SNES to NES adapter
+M30/SN30/N30    2.4g        NES             NES 2.4g Adapter    You can use M30 and SN30 controllers, but the extra buttons will not work.
+
+@ - The NES30 came with the original Nt Minis and was sold standalone.  It has four red action buttons and two shoulder buttons.  The SNES30 has the diagonal Start and Select button layout of an original SNES controller.
+* - Presumably any current 8bitdo Bluetooth controller would work to this extent, NES30 also works with this limitation if current firmware is used.
+^ - Download firmware here : https://support.analogue.co/hc/en-us/articles/115001657087-Using-the-Retro-Receiver-for-NES-with-the-Nt-mini, ignore what it says about Nt Mini Noir.
+
+Putting Controllers into Pairing Mode
+-------------------------------------
+
+To put the SN30, N30, SNES30 or NES30 into pairing mode, press Select for 3 seconds until the blue LED starts to rapidly blink.  To put the M30 into pairing mode, press Mode (-) for 3 seconds until the blue LED starts to rapidly blink.
+
+-----------------------------
+Required/Supported BIOS Files
+-----------------------------
+
+                    Required Name
+Core Name           /Default Name*  Byte Size   CRC32       Description
+---------------     --------------  ---------   --------    --------------------
+                    
+
+Adventurevision     avbios.bin        1024      279E33D1    8048 internal ROM
+                    avsound.bin        512      81E95975    Sound CPU ROM
+
+Atari 2600          avoxrom.bin       8192      EB8DE7CD    Atarivox PIC ROM
+                    avoxee.bin         256      66C92EF6    Atarivox PIC EEPROM
+                    scbios.bin        2048      C3A3F073    Supercharger BIOS
+                        
+Atari 7800          7800bios.bin*     4096      5D13730C    7800 USA BIOS
+                        
+Channel F           cfbios.bin        2048      2882C02D    Channel F BIOS
+                    
+ColecoVision        colbios.bin*      8192      3AA93EF3    ColecoVision Official BIOS
+                                      8192      39BB16FC    ColecoVision BIOS with Replacement Font and No Time Delay
+                                     16384      4999ABC6    Bit Corp BIOS with built-in game
+                                      8192      2ABA3C91    ColecoVision BIOS with No Time Delay
+                                      8192      434E237F    ColecoVision BIOS with No Time Delay PAL Setting
+
+Creativision        crbios.bin        2048      05602697    Creativision BIOS
+
+Gamate              gmbios.bin        4096      03A5F3A7    The first BIOS (i.e. UMC version)
+                    gmbios2.bin       4096      07090415    Optional second BIOS (i.e. Bit Corp version)
+                                
+Game King           gkbios.bin      524288      5A1ADE3D    Game King BIOS
+        
+Game Boy            dmgbios.bin*       256      C2F5CC97    Bootstrap ROM for early Japanese DMGs
+                                       256      59C8598E    Bootstrap ROM for DMGs (mainstream)
+                                       256      E6920754    Bootstrap ROM for Game Boy Pocket
+                                       256      EC8A83B9    Bootstrap ROM for Super Game Boy (no scrolling logo)
+                                       256      53D0DD63    Bootstrap ROM for Super Game Boy 2 (no scrolling logo)
+
+Game Boy Color      gbcbios.bin*      2304      E8EF5318    Bootstrap ROM for early Japanese GBCs
+                                      2304      41884E46    Bootstrap ROM for GBCs (mainstream)
+
+Game Gear           ggbios.bin*       1024      0EBEA9D4    Boot screen shown on later Game Gears
+
+Intellivision       012.bin           2048      8BD786EC    Speech ROM in the SP-256-012 on the Intellivoice
+                                      8192      683A4158    Built-in Graphics ROM for Intellivision Master Component
+                    intvexec1.bin*    8208      EEB54C63    Executive ROM for Intellivision 1
+                                      8728      A85FC6DD    Executive ROM for Intellivision 2   
+                                      8208      F52718C0    Executive ROM for Sears Super Video Arcade
+                        
+Master System       smsbios.bin*      8192      0072ED54    USA/Europe BIOS v1.3
+                                      8192      1A15DFCC    USA M404 Prototype BIOS (works with few games)
+                                      8192      B3D854F8    Europe BIOS v2.0
+                                      8192      48D44A13    Japanese Master System BIOS v2.1
+
+NES                 fds.bin           8192      1C7AE5D5    Famicom Disk System BIOS
+                                      8192      5E607DCF    Famicom Disk System BIOS Rev. 1
+                                      8192      4DF24A6C    Twin Famicom BIOS
+                    
+Odyssey^2           o2bios.bin        1024      8016A315    Main 8048 BIOS
+                    019.bin           2048      19355075    Speech ROM in the SP0256-019 speech chip on The Voice
+                    sp128_03.bin     16384      66041B03    Speech ROM resident in the The Voice speech module 
+                    sp128_04.bin     16384      6780C7D3    Speech ROM in Sid the Spellbinder
+
+RCA Studio 2        rca2bios.bin      2048      A494B339    RCA Studio 2 BIOS
+                    
+Videobrain          uvres1.bin        2048      065FE7C2    The first BIOS file
+                    uvres2.bin        2048      1D85D7BE    The second BIOS file
+
+If there is an * next to a file name, that means that the Core supports loading a BIOS file from the file browser and can have any name, but the Core will load a file located in \BIOS with this name (without the *) by default.
+If the name in the column to the right to the Core Name has no * next to it then the core is looking for that specific file name, but the data in that file can match any of the checksums given for that BIOS.  
+
+--------------------
+Prior Update History
+--------------------
+
+v6.6 release 02/11/21
+
+(general)
+* All cores should have their video window properly centered on the X and Y axis when the sliders for position are in the center.  The exception is for cores with an extremely low original resolution, such as Game King. 
+* All scaling defaults have been updated to more useful values.  
+* Added SPD HDMI Packet to identify console as "Nt Mini Noir"
+
+(NES)
+* Added cheat codes menu when running ROMs via jailbreak
+* Added ability to decrement letters on cheat code and Copynes mini by pressing select
+* Replaced Firebrandx palette with the latest one ("Smooth_-_Balanced_Greys_FBX")
+* Fixed Vs. Hogan's Alley and Duck Hunt "gun stolen" alarm sound going off all the time or in the menu
+* Fixed FDS RAM Adapter, Super Mario Bros. and many other games exhibiting graphics issue when cartridges were being used
+* Fixed Vs. Mighty Bomb Jack reversed controls
+* Fixed Trojan audio channels cutting off early
+* Fixed playing a Vs. game then an FDS game caused a bad palette
+* Fixed Vs. coin insertion not working when using a SNES or NTT Data Keypad
+* Fixed Sunsoft 5B audio implementation
+* Fixed Battletoads and Double Dragon player 2 selection box moving on its own
+* Fixed games (i.e. Kickmaster) with mappers that used A12 for scanline counts had jittering graphics in 16 sprite mode
+* Fixed FDS manual disk ejection not working correctly
+* Fixed Copynes mini not properly exiting high resolution mode from the file menu
+* Fixed Maniac Mansion's intermitent flickering top line
+* Fixed Eggerland - Meikyuu no Fukkatsu and Egger Land - Souzou e no Tabidachi's popping square channel
+
+(GBC)
+* Fixed Barbie Pet Rescue's blank screen before the title
+* Fixed Pokemon Pinball's corrupt frames when screen was blanked
+* Fixed Bear in the Big Blue House hanging on the title screen
+* Fixed Bear in the Big Blue House's palette issue at the top of the screen
+* Fixed Super Mario Deluxe (and other games) palette issues
+* Fixed Mia Hamm Soccer title screen graphic issues
+* Fixed Jungle Book: Mowgli's Wild Adventure corruption when paused/unpaused
+* Fixed Klax crash when reaching level 5
+* Fixed Mickey's Speedway palette issues
+* Fixed Perfect Dark non-working digitized audio
+* Fixed Perfect Dark status bar on the right not displaying
+
+(Genesis)
+* Added full screen dithering, setting the dithering slider to 63 (maximum) will enable it
+* Removed non-functional cropping menu - use the crop left/right and top/bottom settings in video extras menu
+* Fixed interlaced mode display issues
+
+(Game Gear)
+* Fixed top line not visible
+
+(2600)
+* Fixed graphic issues on certain units (random pixels on green screens)
+* Fixed palette sometimes flashing when entering/exiting the menu
+
+(Supervision)
+* Fixed Journey to the West
+
+(Gamate, 2600, Intellivision)
+* Fixed scaling values
+
+
+v6.5 release 12/15/20
+
+(general)
+* Controller test added
+* Fixed L/R reverse on RCA jacks
+* Fixed filter cutoff display bug
+
+(NES)
+* Added full FDS support with manual, semiautomatic and automatic side switching (see NES section below for operation notes)
+* Added Super Russian Roulette mapper (#413)
+* Added support for Haunted Halloween '85 and '86
+* Added Vs. palette support for composite and s-video
+* Reduced default expansion audio level for better balance with internal audio.
+* Passthrough mode can now be cancelled by tapping reset twice.
+* Fixed CopyNES mini save WRAM dumping, save games on cartridges can now be preserved
+* Fixed Vice Project Doom / Gun-Dec starting in debug mode with second controller plugged in
+* Fixed VRC6 register swap function.  Use both VRC6 and VRC6 Swap for Madara and Esper Dream 2 and just VRC6 for Akumajou Densetsu
+* Fixed FDS Audio channel imbalance when panning sliders are centered
+* Fixed small FDS channel bug
+* Fixed popping square wave audio in Egger Land - Souzou e no Tabidachi and Eggerland - Meikyuu no Fukkatsu
+* Fixed Vs. Goonies graphic issue
+* Fixed Game of the Goose graphic issues (#512)
+* Fixed DPCM corruption bug for PAL and Dendy Modes
+* Fixed MMC5 Castlevania III PAL cartridge functionality
+* Fixed Dendy mode for EverDrives and Cartridges
+* Fixed Dendy mode NMI flag
+
+(GB/GBC)
+* Fixed palette issues affecting multiple games (Pokemon Pinball, Mega Man Xtreme, Pooh & Tigger's Hunny Safari, Harvest Moon 3)
+* Fixed wave channel audio bug
+* Fixed Tokyo Disney crash when playing 5th level
+* Fixed crash in Barbie Magic Genie Adventure when using powers
+* Fixed Razor Freestyle Scooter and Lufia failing to load
+* Fixed Lego Racers cloud color bug
+ 
+(Colecovision)
+* Added Famicom Network controller functionality
+* Fixed Penguin Adventure
+
+(Genesis)
+* Added Famicom Network controller functionality
+* Fixed Audio sliders bug
+
+(SMS)
+* Added Famicom Network controller functionality
+* Fixed BIOSes loading built in games
+* Use "end" button on Famicom Network or Super Famicom NTT Data Keypad to simulate pressing console reset button
+
+(Intellivision)
+* Added Famicom Network controller functionality.  0, A, B are the three buttons. 0 on the keypad is remapped to .
+* Added Player 1/2 swap to cores menu
+
+(SPC)
+* Fixed audio static bug
+
+----------------------
+v6.2 release, 11/23/20
+
+* initial release
