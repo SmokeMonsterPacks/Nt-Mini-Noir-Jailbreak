@@ -14,7 +14,7 @@ Custom *Jailbreak* firmware for the Analogue Nt Mini v2 *Noir*:
 
 (custom jailbreak firmware for the 2017 original Analogue Nt Mini v1
 are available [at that other
-repository](https://github.com/tjanas/Nt-Mini-Legacy-Jailbreak))
+repository](http://blog.kevtris.org/blogfiles/))
 
 **IMPORTANT**: Use the [NES 2.0 XML Database](https://forums.nesdev.com/viewtopic.php?f=3&t=19940&p=248796) [(mirror)](https://github.com/SmokeMonsterPacks/Nt-Mini-Noir-Jailbreak/raw/main/nes20db.7z) and the [NES Header Repair Tool Python Script](https://github.com/Kitrinx/NES_Header_Repair) to fix your NES rom headers!
 
